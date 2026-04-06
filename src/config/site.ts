@@ -6,11 +6,11 @@ export const site = {
     'Watch the Match. Flow with the Code. Win in the Death Overs. A cricket-themed AI coding tournament by GDG Indore.',
   nav: [
     { label: 'Matches', href: '/' },
-    { label: 'Leaderboard', href: '/leaderboard' },
     { label: 'Playbook', href: '/#playbook' },
     { label: 'Partners', href: '/#partners' },
+    { label: 'Leaderboard', href: '/leaderboard' },
   ],
-  cta: { label: 'RSVP Now', href: '#' },
+  cta: { label: 'Leaderboard', href: '/leaderboard' },
   footer: {
     tagline: 'Coded with 🏏 and AI by GDG Indore.',
     links: [

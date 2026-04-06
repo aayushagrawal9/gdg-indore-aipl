@@ -16,13 +16,14 @@ const { active = 'Matches' } = Astro.props;
       <span class="material-symbols-outlined text-primary">code</span>
       <span class="font-headline font-extrabold uppercase tracking-tight">{site.brand}</span>
     </a>
-    <div class="hidden md:flex items-center gap-8 font-headline font-medium text-sm tracking-tight">
+    <div class="hidden md:flex items-center gap-8 font-headline font-medium text-sm tracking-tight" data-nav-links>
       {
         site.nav.map((item) => {
           const isActive = item.label === active;
           return (
             <a
               href={item.href}
+              data-nav-label={item.label}
               class={
                 isActive
                   ? 'text-primary border-b-2 border-primary-fixed pb-1'
@@ -45,3 +46,41 @@ const { active = 'Matches' } = Astro.props;
     </div>
   </div>
 </nav>
+
+<script>
+  const ACTIVE = 'text-primary border-b-2 border-primary-fixed pb-1';
+  const INACTIVE = 'text-on-surface/60 hover:text-primary transition-colors';
+
+  // Only run scroll-spy on the landing page (where sections exist)
+  const sections = document.querySelectorAll<HTMLElement>('#playbook, #partners');
+  if (sections.length > 0) {
+    const links = document.querySelectorAll<HTMLAnchorElement>('[data-nav-links] a[data-nav-label]');
+
+    const setActive = (label: string) => {
+      links.forEach((a) => {
+        a.className = a.getAttribute('data-nav-label') === label ? ACTIVE : INACTIVE;
+      });
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            const label = id === 'playbook' ? 'Playbook' : id === 'partners' ? 'Partners' : null;
+            if (label) setActive(label);
+          }
+        }
+        // If none of the anchor sections are visible, default to Matches
+        const anyVisible = [...sections].some((s) => {
+          const r = s.getBoundingClientRect();
+          return r.top < window.innerHeight && r.bottom > 0;
+        });
+        if (!anyVisible) setActive('Matches');
+      },
+      { threshold: 0.3 }
+    );
+
+    sections.forEach((s) => observer.observe(s));
+  }
+</script>
