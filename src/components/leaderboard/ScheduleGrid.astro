@@ -1,0 +1,106 @@
+---
+import { fullSchedule } from '@config/leaderboard/schedule';
+---
+
+<section class="space-y-8">
+  <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+    <h2 class="text-3xl md:text-4xl font-black tracking-tight">{fullSchedule.heading}</h2>
+    <div class="flex gap-2" data-schedule-tabs>
+      {
+        fullSchedule.tabs.map((tab, i) => (
+          <button
+            type="button"
+            data-schedule-tab={tab.value}
+            class={
+              i === 0
+                ? 'px-4 py-2 bg-primary text-on-primary rounded-full text-sm font-bold'
+                : 'px-4 py-2 bg-surface-container-low hover:bg-surface-container-high text-on-surface rounded-full text-sm font-bold transition-all'
+            }
+          >
+            {tab.label}
+          </button>
+        ))
+      }
+    </div>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6" data-schedule-grid>
+    {
+      fullSchedule.matches.map((match) => {
+        const labelColor = match.highlighted ? 'text-primary' : 'text-on-surface-variant';
+        const ctaClasses =
+          match.cta.variant === 'solid'
+            ? 'w-full py-3 bg-primary text-on-primary font-bold rounded-xl group-hover:shadow-[0_4px_12px_rgba(15,107,0,0.3)] transition-all'
+            : 'w-full py-3 border-2 border-primary text-primary font-bold rounded-xl hover:bg-primary hover:text-on-primary transition-all';
+        return (
+          <div
+            data-match-tab={match.tab}
+            class="bg-surface-container-lowest p-6 rounded-xl shadow-[0_4px_20px_rgba(44,47,49,0.04)] hover:shadow-[0_20px_40px_rgba(44,47,49,0.08)] transition-all flex flex-col justify-between group"
+          >
+            <div>
+              <div class="flex justify-between items-start mb-6">
+                <div class={`font-mono text-xs font-bold ${labelColor}`}>{match.matchLabel}</div>
+                <div class="text-[10px] font-mono text-on-surface-variant bg-surface-container-low px-2 py-1 rounded">
+                  {match.statusLabel}
+                </div>
+              </div>
+              <div class="flex items-center justify-between mb-8">
+                <div class="text-center">
+                  <div class="w-16 h-16 bg-slate-100 rounded-full mb-2 mx-auto flex items-center justify-center text-2xl font-black">
+                    {match.teamA.initials}
+                  </div>
+                  <div class="font-bold text-sm">{match.teamA.name}</div>
+                </div>
+                <div class="font-mono text-2xl font-bold opacity-20 italic">VS</div>
+                <div class="text-center">
+                  <div class="w-16 h-16 bg-slate-100 rounded-full mb-2 mx-auto flex items-center justify-center text-2xl font-black">
+                    {match.teamB.initials}
+                  </div>
+                  <div class="font-bold text-sm">{match.teamB.name}</div>
+                </div>
+              </div>
+            </div>
+            <div class="border-t border-outline-variant/10 pt-4 mt-4">
+              <div class="flex items-center gap-2 text-xs text-on-surface-variant mb-4 flex-wrap">
+                <span class="material-symbols-outlined text-[16px]">schedule</span>
+                <span class="font-mono">{match.time}</span>
+                <span class="mx-1">•</span>
+                <span class="material-symbols-outlined text-[16px]">room</span>
+                <span>{match.location}</span>
+              </div>
+              <button class={ctaClasses}>{match.cta.label}</button>
+            </div>
+          </div>
+        );
+      })
+    }
+  </div>
+</section>
+
+<script>
+  const tabsContainer = document.querySelector('[data-schedule-tabs]');
+  const grid = document.querySelector('[data-schedule-grid]');
+  if (tabsContainer && grid) {
+    const buttons = tabsContainer.querySelectorAll('button[data-schedule-tab]');
+    const cards = grid.querySelectorAll('[data-match-tab]');
+    const activate = (value: string) => {
+      buttons.forEach((btn) => {
+        const isActive = btn.getAttribute('data-schedule-tab') === value;
+        btn.className = isActive
+          ? 'px-4 py-2 bg-primary text-on-primary rounded-full text-sm font-bold'
+          : 'px-4 py-2 bg-surface-container-low hover:bg-surface-container-high text-on-surface rounded-full text-sm font-bold transition-all';
+      });
+      cards.forEach((card) => {
+        const visible = card.getAttribute('data-match-tab') === value;
+        (card as HTMLElement).style.display = visible ? '' : 'none';
+      });
+    };
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const value = btn.getAttribute('data-schedule-tab');
+        if (value) activate(value);
+      });
+    });
+    // Apply the default filter on load so completed matches are hidden initially.
+    activate('upcoming');
+  }
+</script>

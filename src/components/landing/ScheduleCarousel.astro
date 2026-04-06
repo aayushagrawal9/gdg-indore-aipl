@@ -1,0 +1,53 @@
+---
+import { schedule } from '@config/landing/schedule';
+---
+
+<section class="py-24 px-6 md:px-8 max-w-7xl mx-auto">
+  <div class="flex justify-between items-end mb-12">
+    <div>
+      <h2 class="text-xs font-mono uppercase tracking-widest text-primary mb-2">
+        {schedule.eyebrow}
+      </h2>
+      <h3 class="text-3xl md:text-4xl font-headline font-extrabold tracking-tight">
+        {schedule.heading}
+      </h3>
+    </div>
+    <div class="hidden md:flex gap-4">
+      <span class="material-symbols-outlined p-2 rounded-full bg-surface-container hover:bg-surface-container-high cursor-pointer">arrow_back</span>
+      <span class="material-symbols-outlined p-2 rounded-full bg-surface-container hover:bg-surface-container-high cursor-pointer">arrow_forward</span>
+    </div>
+  </div>
+  <div class="flex gap-6 overflow-x-auto pb-8 snap-x no-scrollbar">
+    {
+      schedule.matches.map((match, i) => {
+        const isUpcoming = match.status === 'upcoming';
+        const statusClasses = isUpcoming
+          ? 'bg-yellow-100 text-yellow-700'
+          : 'bg-primary-fixed/20 text-primary';
+        const ctaClasses = isUpcoming
+          ? 'bg-primary-fixed text-on-primary-container hover:scale-[1.02]'
+          : 'bg-surface-container text-on-surface-variant';
+        const shimmer = i === 0 ? 'kinetic-shimmer' : '';
+        return (
+          <div class={`min-w-[320px] glass-card p-6 rounded-xl snap-center flex flex-col gap-6 ${shimmer}`}>
+            <div class="flex justify-between items-start">
+              <span class={`px-3 py-1 ${statusClasses} text-[10px] font-mono font-bold rounded-full uppercase tracking-tighter`}>
+                {isUpcoming ? 'Upcoming' : 'Completed'}
+              </span>
+              <span class="material-symbols-outlined text-outline-variant">
+                {isUpcoming ? 'calendar_today' : 'check_circle'}
+              </span>
+            </div>
+            <div>
+              <h4 class="text-2xl font-headline font-bold mb-1">{match.teams}</h4>
+              <p class="text-sm text-on-surface-variant font-mono">{match.date}</p>
+            </div>
+            <button class={`w-full py-3 rounded-full font-bold text-sm transition-transform ${ctaClasses}`}>
+              {match.ctaLabel}
+            </button>
+          </div>
+        );
+      })
+    }
+  </div>
+</section>

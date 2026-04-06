@@ -1,0 +1,13 @@
+---
+interface Props {
+  class?: string;
+  shimmer?: boolean;
+}
+
+const { class: className = '', shimmer = false } = Astro.props;
+const shimmerClass = shimmer ? 'kinetic-shimmer' : '';
+---
+
+<div class={`glass-card rounded-xl ${shimmerClass} ${className}`}>
+  <slot />
+</div>

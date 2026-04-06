@@ -1,0 +1,50 @@
+---
+import { playbook } from '@config/landing/playbook';
+---
+
+<section id="playbook" class="py-24 px-6 md:px-8 max-w-4xl mx-auto">
+  <div class="text-center mb-20">
+    <h2 class="text-xs font-mono uppercase tracking-widest text-primary mb-2">
+      {playbook.eyebrow}
+    </h2>
+    <h3 class="text-3xl md:text-4xl font-headline font-extrabold tracking-tight">
+      {playbook.heading}
+    </h3>
+  </div>
+  <div class="relative space-y-16">
+    <div class="absolute left-1/2 top-0 bottom-0 w-1 bg-primary-fixed/20 -translate-x-1/2"></div>
+    {
+      playbook.phases.map((phase, i) => {
+        const onLeft = i % 2 === 0;
+        return (
+          <div class="relative flex items-center justify-between">
+            <div class={`w-5/12 pr-6 md:pr-12 text-right ${onLeft ? '' : 'hidden md:block md:invisible'}`}>
+              {onLeft && (
+                <div>
+                  <h4 class="text-xl md:text-2xl font-headline font-bold">{phase.title}</h4>
+                  <p class="text-on-surface-variant text-sm mt-2">{phase.description}</p>
+                  <span class="font-mono text-xs text-primary font-bold block mt-2">{phase.phase}</span>
+                </div>
+              )}
+              {!onLeft && (
+                <span class="font-mono text-xs text-primary font-bold">{phase.phase}</span>
+              )}
+            </div>
+            <div class="z-10 w-12 h-12 rounded-full bg-primary flex items-center justify-center text-on-primary ring-8 ring-background shrink-0">
+              <span class="material-symbols-outlined">{phase.icon}</span>
+            </div>
+            <div class={`w-5/12 pl-6 md:pl-12 ${onLeft ? 'hidden md:block md:invisible' : ''}`}>
+              {!onLeft && (
+                <div>
+                  <h4 class="text-xl md:text-2xl font-headline font-bold">{phase.title}</h4>
+                  <p class="text-on-surface-variant text-sm mt-2">{phase.description}</p>
+                  <span class="font-mono text-xs text-primary font-bold block mt-2">{phase.phase}</span>
+                </div>
+              )}
+            </div>
+          </div>
+        );
+      })
+    }
+  </div>
+</section>

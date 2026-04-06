@@ -1,0 +1,27 @@
+---
+import { venue } from '@config/leaderboard/venue';
+---
+
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_20px_40px_rgba(44,47,49,0.06)] glass-shimmer">
+  <div class="h-48 bg-surface-container-low relative">
+    <img
+      src={venue.image}
+      alt={venue.imageAlt}
+      class="w-full h-full object-cover grayscale opacity-60"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent"></div>
+    <div class="absolute bottom-4 left-4">
+      <span class="material-symbols-outlined text-primary mb-1">location_on</span>
+      <div class="font-bold">{venue.label}</div>
+    </div>
+  </div>
+  <div class="p-6">
+    <div class="font-mono text-[10px] text-on-surface-variant tracking-[0.2em] uppercase mb-2">
+      {venue.eyebrow}
+    </div>
+    <p class="text-sm text-on-surface-variant leading-relaxed">{venue.description}</p>
+    <button class="mt-4 w-full py-3 bg-surface-container-low hover:bg-surface-container-high text-on-surface text-sm font-bold rounded-xl transition-all">
+      {venue.ctaLabel}
+    </button>
+  </div>
+</div>

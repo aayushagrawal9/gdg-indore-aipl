@@ -1,0 +1,43 @@
+---
+import { liveStandings } from '@config/leaderboard/liveStandings';
+---
+
+<div class="bg-surface-container-lowest rounded-xl p-6 md:p-8 shadow-[0_20px_40px_rgba(44,47,49,0.06)] glass-shimmer">
+  <div class="flex items-center justify-between mb-8 gap-4 flex-wrap">
+    <div class="flex items-center gap-3">
+      <span class="flex h-3 w-3 relative">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
+      </span>
+      <h2 class="text-xl md:text-2xl font-bold tracking-tight">{liveStandings.heading}</h2>
+    </div>
+    <div class="font-mono text-xs bg-surface-container-low px-3 py-1.5 rounded-full text-on-surface-variant">
+      {liveStandings.matchId}
+    </div>
+  </div>
+  <div class="space-y-4">
+    {
+      liveStandings.teams.map((team) => {
+        const accentBg = team.accent === 'secondary' ? 'bg-secondary/10 text-secondary' : 'bg-tertiary/10 text-tertiary';
+        const scoreClass = team.highlighted ? 'text-primary' : 'text-on-surface';
+        return (
+          <div class="flex items-center justify-between p-4 bg-surface-container-low/50 rounded-xl hover:bg-surface-container-low transition-colors">
+            <div class="flex items-center gap-4">
+              <div class={`w-12 h-12 ${accentBg} rounded-lg flex items-center justify-center font-mono font-bold`}>
+                {team.rank}
+              </div>
+              <div>
+                <div class="font-bold">{team.name}</div>
+                <div class="text-xs text-on-surface-variant font-mono uppercase tracking-wider">{team.description}</div>
+              </div>
+            </div>
+            <div class="text-right">
+              <div class={`text-2xl font-mono font-bold ${scoreClass}`}>{team.vibeIndex}</div>
+              <div class="text-[10px] font-mono text-on-surface-variant">VIBE INDEX</div>
+            </div>
+          </div>
+        );
+      })
+    }
+  </div>
+</div>

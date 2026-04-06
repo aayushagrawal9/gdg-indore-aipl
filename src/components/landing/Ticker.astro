@@ -1,0 +1,10 @@
+---
+import { ticker } from '@config/landing/ticker';
+---
+
+<div class="bg-primary text-on-primary py-3 overflow-hidden border-y border-primary-fixed/20">
+  <div class="scrolling-ticker inline-flex gap-12 font-mono text-sm font-bold uppercase tracking-widest items-center">
+    {ticker.map((item) => <span class="shrink-0 px-6">{item}</span>)}
+    {ticker.map((item) => <span class="shrink-0 px-6">{item}</span>)}
+  </div>
+</div>

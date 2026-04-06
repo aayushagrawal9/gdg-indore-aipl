@@ -1,0 +1,295 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "code GDG Indore" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e5]: code
+        - generic [ref=e6]: GDG Indore
+      - generic [ref=e7]:
+        - link "Matches" [ref=e8] [cursor=pointer]:
+          - /url: /
+        - link "Leaderboard" [ref=e9] [cursor=pointer]:
+          - /url: /leaderboard
+        - link "Playbook" [ref=e10] [cursor=pointer]:
+          - /url: /#playbook
+        - link "Partners" [ref=e11] [cursor=pointer]:
+          - /url: /#partners
+      - link "RSVP Now" [ref=e13] [cursor=pointer]:
+        - /url: "#"
+  - main [ref=e14]:
+    - generic [ref=e15]:
+      - generic [ref=e16]:
+        - generic [ref=e17]: GDG Indore Presents
+        - heading "Prompt Premier League (PPL)" [level=1] [ref=e19]
+        - paragraph [ref=e20]:
+          - text: Watch the Match. Flow with the Code.
+          - text: Win in the Death Overs.
+        - generic [ref=e21]:
+          - link "Join the Next Watch Party" [ref=e22] [cursor=pointer]:
+            - /url: "#"
+          - link "View Leaderboard" [ref=e23] [cursor=pointer]:
+            - /url: /leaderboard
+      - img "Overhead view of a futuristic glowing cricket stadium under soft evening light" [ref=e27]
+    - generic [ref=e29]:
+      - generic [ref=e30]: "⚡ LIVE: Antigravity Vibe Coding"
+      - generic [ref=e31]: 🏏 IPL Watch Party
+      - generic [ref=e32]: 🤖 Powered by Gemini
+      - generic [ref=e33]: "⚡ LIVE: Antigravity Vibe Coding"
+      - generic [ref=e34]: 🏏 IPL Watch Party
+      - generic [ref=e35]: 🤖 Powered by Gemini
+      - generic [ref=e36]: "⚡ LIVE: Antigravity Vibe Coding"
+      - generic [ref=e37]: 🏏 IPL Watch Party
+      - generic [ref=e38]: 🤖 Powered by Gemini
+      - generic [ref=e39]: "⚡ LIVE: Antigravity Vibe Coding"
+      - generic [ref=e40]: 🏏 IPL Watch Party
+      - generic [ref=e41]: 🤖 Powered by Gemini
+    - generic [ref=e42]:
+      - generic [ref=e43]:
+        - generic [ref=e44]:
+          - heading "The Schedule" [level=2] [ref=e45]
+          - heading "Upcoming Innings" [level=3] [ref=e46]
+        - generic [ref=e47]:
+          - generic [ref=e48] [cursor=pointer]: arrow_back
+          - generic [ref=e49] [cursor=pointer]: arrow_forward
+      - generic [ref=e50]:
+        - generic [ref=e51]:
+          - generic [ref=e52]:
+            - generic [ref=e53]: Upcoming
+            - generic [ref=e54]: calendar_today
+          - generic [ref=e55]:
+            - heading "MI vs CSK" [level=4] [ref=e56]
+            - paragraph [ref=e57]: May 24, 2024 • 7:30 PM
+          - button "Register for Watch Party" [ref=e58] [cursor=pointer]
+        - generic [ref=e59]:
+          - generic [ref=e60]:
+            - generic [ref=e61]: Completed
+            - generic [ref=e62]: check_circle
+          - generic [ref=e63]:
+            - heading "RCB vs KKR" [level=4] [ref=e64]
+            - paragraph [ref=e65]: May 18, 2024 • 7:30 PM
+          - button "View Recap" [ref=e66] [cursor=pointer]
+        - generic [ref=e67]:
+          - generic [ref=e68]:
+            - generic [ref=e69]: Upcoming
+            - generic [ref=e70]: calendar_today
+          - generic [ref=e71]:
+            - heading "GT vs SRH" [level=4] [ref=e72]
+            - paragraph [ref=e73]: May 28, 2024 • 7:30 PM
+          - button "Register for Watch Party" [ref=e74] [cursor=pointer]
+    - generic [ref=e76]:
+      - generic [ref=e77]:
+        - heading "The Rankings" [level=2] [ref=e78]
+        - heading "The Scoreboard" [level=3] [ref=e79]
+      - generic [ref=e81]:
+        - button "Overall Season Rankings" [ref=e82] [cursor=pointer]
+        - button "Match-by-Match Top 3" [ref=e83] [cursor=pointer]
+      - generic [ref=e84]:
+        - generic [ref=e85]:
+          - generic [ref=e87]: workspace_premium
+          - generic [ref=e88]: "01"
+          - img "Portrait of Aravind Sharma" [ref=e90]
+          - generic [ref=e91]:
+            - heading "Aravind Sharma" [level=4] [ref=e92]
+            - paragraph [ref=e93]: "Project: CricketInsight AI"
+          - generic [ref=e94]:
+            - generic [ref=e95]: Total Vibe Points
+            - generic [ref=e96]: 12,450
+        - generic [ref=e97]:
+          - generic [ref=e98]: "02"
+          - img "Portrait of Priya Patel" [ref=e100]
+          - generic [ref=e101]:
+            - heading "Priya Patel" [level=4] [ref=e102]
+            - paragraph [ref=e103]: "Project: Gemini Overs Analytics"
+          - generic [ref=e104]:
+            - generic [ref=e105]: Vibe Points
+            - generic [ref=e106]: 10,120
+        - generic [ref=e107]:
+          - generic [ref=e108]: "03"
+          - img "Portrait of Rohan Verma" [ref=e110]
+          - generic [ref=e111]:
+            - heading "Rohan Verma" [level=4] [ref=e112]
+            - paragraph [ref=e113]: "Project: Playback Predictor"
+          - generic [ref=e114]:
+            - generic [ref=e115]: Vibe Points
+            - generic [ref=e116]: 9,840
+    - generic [ref=e117]:
+      - generic [ref=e118]:
+        - heading "The Flow" [level=2] [ref=e119]
+        - heading "The Playbook" [level=3] [ref=e120]
+      - generic [ref=e121]:
+        - generic [ref=e123]:
+          - generic [ref=e125]:
+            - heading "The Toss" [level=4] [ref=e126]
+            - paragraph [ref=e127]: Team formations and prompt engineering basics. Setting the arena for the match.
+            - generic [ref=e128]: PHASE 01
+          - generic [ref=e130]: toll
+        - generic [ref=e131]:
+          - generic [ref=e133]: bolt
+          - generic [ref=e135]:
+            - heading "Powerplay" [level=4] [ref=e136]
+            - paragraph [ref=e137]: Rapid-fire vibe coding challenges. Speed is key to gaining early momentum.
+            - generic [ref=e138]: PHASE 02
+        - generic [ref=e139]:
+          - generic [ref=e141]:
+            - heading "Middle Overs" [level=4] [ref=e142]
+            - paragraph [ref=e143]: Complex architectural prompts and logic flow optimization. Consistency wins here.
+            - generic [ref=e144]: PHASE 03
+          - generic [ref=e146]: insights
+        - generic [ref=e147]:
+          - generic [ref=e149]: sports_score
+          - generic [ref=e151]:
+            - heading "Death Overs" [level=4] [ref=e152]
+            - paragraph [ref=e153]: The ultimate showdown. Deploying production-ready Gemini apps under high pressure.
+            - generic [ref=e154]: PHASE 04
+    - generic [ref=e156]:
+      - generic [ref=e157]:
+        - heading "Our Ecosystem" [level=2] [ref=e158]
+        - heading "The Pavilion" [level=3] [ref=e159]
+      - generic [ref=e160]:
+        - generic [ref=e161]:
+          - generic [ref=e162]: groups
+          - heading "GDG Indore" [level=4] [ref=e163]
+          - paragraph [ref=e164]: The Host & Community Engine
+        - generic [ref=e166]: Manara Labs
+        - generic [ref=e168]: Protonshub
+        - generic [ref=e170]: Metafic
+        - generic [ref=e172]: TechNext
+        - generic [ref=e173]:
+          - generic [ref=e174]:
+            - generic [ref=e175]: Venue Partner
+            - heading "Indore Convention Center" [level=5] [ref=e176]
+          - generic [ref=e177]: location_on
+  - contentinfo [ref=e178]:
+    - generic [ref=e179]:
+      - generic [ref=e180]:
+        - link "Discord" [ref=e181] [cursor=pointer]:
+          - /url: "#"
+        - link "Slack" [ref=e182] [cursor=pointer]:
+          - /url: "#"
+        - link "Rules" [ref=e183] [cursor=pointer]:
+          - /url: "#"
+      - paragraph [ref=e184]: Coded with 🏏 and AI by GDG Indore.
+      - generic [ref=e185]:
+        - generic [ref=e186]: terminal
+        - generic [ref=e187]: sports_cricket
+  - generic [ref=e190]:
+    - generic [ref=e191]:
+      - checkbox "Use dark theme" [ref=e192]
+      - generic [ref=e193] [cursor=pointer]:
+        - img [ref=e194]
+        - img [ref=e198]
+        - generic [ref=e202]: Use dark theme
+    - banner [ref=e203]:
+      - generic [ref=e204]:
+        - heading "CompilerError" [level=2] [ref=e205]
+        - heading "An error occurred." [level=1] [ref=e206]
+      - img [ref=e209]
+    - generic [ref=e212]:
+      - generic [ref=e213]:
+        - img [ref=e215]
+        - generic [ref=e217]: Unable to assign attributes when using <> Fragment shorthand syntax!
+      - generic [ref=e218]:
+        - img [ref=e220]
+        - generic [ref=e222]:
+          - text: "To fix this, please change < 3; const medal = medalColor[entry.rank - 1]; if (isTopThree) { return ( <div class=\"flex items-center gap-4 p-4 md:p-6 bg-surface-container-lowest rounded-xl border-l-8 shadow-sm glass-shimmer\" style={"
+          - code [ref=e223]: "border-left-color: ${medal}"
+          - text: "} > to use the longhand Fragment syntax: <Fragment 3; const medal = medalColor[entry.rank - 1]; if (isTopThree) { return ( <div class=\"flex items-center gap-4 p-4 md:p-6 bg-surface-container-lowest rounded-xl border-l-8 shadow-sm glass-shimmer\" style={"
+          - code [ref=e224]: "border-left-color: ${medal}"
+          - text: "} >"
+    - generic [ref=e225]:
+      - generic [ref=e226]:
+        - heading "leaderboard/SeasonStandings.astro:15:39" [level=2] [ref=e227]
+        - button "Open in editor" [ref=e229]:
+          - text: Open in editor
+          - img [ref=e230]
+      - code [ref=e235]:
+        - generic [ref=e236]: "---"
+        - generic [ref=e237]: "import { seasonStandings } from '@config/leaderboard/standings';"
+        - generic [ref=e239]: const medalColor = ['#FFD700', '#C0C0C0', '#CD7F32'];
+        - generic [ref=e240]: "---"
+        - generic [ref=e242]: <section class="space-y-8">
+        - generic [ref=e243]: <div class="max-w-2xl">
+        - generic [ref=e244]: "<h2 class=\"text-3xl md:text-4xl font-black tracking-tight mb-2\">{seasonStandings.heading}</h2>"
+        - generic [ref=e245]: "<p class=\"text-on-surface-variant\">{seasonStandings.description}</p>"
+        - generic [ref=e246]: </div>
+        - generic [ref=e247]: <div class="space-y-3">
+        - generic [ref=e248]: "{"
+        - generic [ref=e249]: "seasonStandings.entries.map((entry) => {"
+        - generic [ref=e250]: const isTopThree = entry.rank <= 3;
+        - generic [ref=e251]: ^
+        - generic [ref=e252]: const medal = medalColor[entry.rank - 1];
+        - generic [ref=e253]: "if (isTopThree) {"
+        - generic [ref=e254]: return (
+        - generic [ref=e255]: <div
+        - generic [ref=e256]: class="flex items-center gap-4 p-4 md:p-6 bg-surface-container-lowest rounded-xl border-l-8 shadow-sm glass-shimmer"
+        - generic [ref=e257]: "style={`border-left-color: ${medal}`}"
+        - generic [ref=e258]: ">"
+        - generic [ref=e259]: "<div class=\"font-mono text-2xl md:text-3xl font-bold w-12\" style={`color: ${medal}`}>"
+        - generic [ref=e260]: "0{entry.rank}"
+        - generic [ref=e261]: </div>
+        - generic [ref=e262]: <div class="flex-1 flex items-center gap-4">
+        - generic [ref=e263]: "<img src={entry.avatar} alt={entry.avatarAlt} class=\"w-12 h-12 rounded-full object-cover\" />"
+        - generic [ref=e264]: <div>
+        - generic [ref=e265]: "<div class=\"font-black text-base md:text-lg\">{entry.name}</div>"
+        - generic [ref=e266]: "<div class=\"text-xs font-mono uppercase text-on-surface-variant\">{entry.team}</div>"
+        - generic [ref=e267]: </div>
+        - generic [ref=e268]: </div>
+        - generic [ref=e269]: <div class="hidden md:block px-8 border-l border-outline-variant/10">
+        - generic [ref=e270]: <div class="text-[10px] font-mono text-on-surface-variant uppercase mb-1">Win Streak</div>
+        - generic [ref=e271]: <div class="flex gap-1">
+        - generic [ref=e272]: "{entry.winStreak?.map((filled) => ("
+        - generic [ref=e273]: "<div class={`w-2 h-4 rounded-full ${filled ? 'bg-primary' : 'bg-outline-variant/20'}`} />"
+        - generic [ref=e274]: "))}"
+        - generic [ref=e275]: </div>
+        - generic [ref=e276]: </div>
+        - generic [ref=e277]: <div class="text-right pl-4 md:pl-8 md:border-l border-outline-variant/10 min-w-[100px] md:min-w-[120px]">
+        - generic [ref=e278]: <div class="text-2xl md:text-3xl font-mono font-bold tracking-tighter">
+        - generic [ref=e279]: "{entry.vibePoints.toLocaleString()}"
+        - generic [ref=e280]: </div>
+        - generic [ref=e281]: <div class="text-[10px] font-mono text-on-surface-variant uppercase">TOTAL VIBE POINTS</div>
+        - generic [ref=e282]: </div>
+        - generic [ref=e283]: </div>
+        - generic [ref=e284]: );
+        - generic [ref=e285]: "}"
+        - generic [ref=e286]: return (
+        - generic [ref=e287]: <div class="flex items-center gap-4 p-4 md:p-6 bg-surface-container-low/50 hover:bg-surface-container-low rounded-xl transition-all">
+        - generic [ref=e288]: "<div class=\"font-mono text-2xl font-bold w-12 text-on-surface-variant/40\">0{entry.rank}</div>"
+        - generic [ref=e289]: <div class="flex-1 flex items-center gap-4">
+        - generic [ref=e290]: <div class="w-12 h-12 rounded-full bg-slate-200 flex items-center justify-center font-bold text-slate-500">
+        - generic [ref=e291]: "{entry.initials}"
+        - generic [ref=e292]: </div>
+        - generic [ref=e293]: <div>
+        - generic [ref=e294]: "<div class=\"font-bold\">{entry.name}</div>"
+        - generic [ref=e295]: "<div class=\"text-[10px] font-mono uppercase text-on-surface-variant\">{entry.team}</div>"
+        - generic [ref=e296]: </div>
+        - generic [ref=e297]: </div>
+        - generic [ref=e298]: <div class="text-right pl-4 md:pl-8 min-w-[100px] md:min-w-[120px]">
+        - generic [ref=e299]: <div class="text-xl md:text-2xl font-mono font-bold tracking-tighter">
+        - generic [ref=e300]: "{entry.vibePoints.toLocaleString()}"
+        - generic [ref=e301]: </div>
+        - generic [ref=e302]: <div class="text-[10px] font-mono text-on-surface-variant uppercase">TOTAL VIBE POINTS</div>
+        - generic [ref=e303]: </div>
+        - generic [ref=e304]: </div>
+        - generic [ref=e305]: );
+        - generic [ref=e306]: "})"
+        - generic [ref=e307]: "}"
+        - generic [ref=e308]: </div>
+        - generic [ref=e309]: </section>
+    - generic [ref=e311]:
+      - heading "Stack Trace" [level=2] [ref=e312]
+      - generic [ref=e313]: "CompilerError: Unable to assign attributes when using <> Fragment shorthand syntax! at handleCompileResultErrors (file:///home/aayus/gdg/gdg-website/node_modules/astro/dist/core/compile/compile.js:65:11) at compile (file:///home/aayus/gdg/gdg-website/node_modules/astro/dist/core/compile/compile.js:53:3) at async compileAstro (file:///home/aayus/gdg/gdg-website/node_modules/astro/dist/vite-plugin-astro/compile.js:13:23) at async TransformPluginContext.transform (file:///home/aayus/gdg/gdg-website/node_modules/astro/dist/vite-plugin-astro/index.js:159:31) at async PluginContainer.transform (file:///home/aayus/gdg/gdg-website/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18) at async loadAndTransform (file:///home/aayus/gdg/gdg-website/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27) at async instantiateModule (file:///home/aayus/gdg/gdg-website/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:52923:44)"
+  - generic [ref=e316]:
+    - button "Menu" [ref=e317]:
+      - img [ref=e319]
+      - generic: Menu
+    - button "Inspect" [ref=e323]:
+      - img [ref=e325]
+      - generic: Inspect
+    - button "Audit" [ref=e327]:
+      - generic [ref=e328]:
+        - img [ref=e329]
+        - img [ref=e332]
+      - generic: Audit
+    - button "Settings" [ref=e335]:
+      - img [ref=e337]
+      - generic: Settings

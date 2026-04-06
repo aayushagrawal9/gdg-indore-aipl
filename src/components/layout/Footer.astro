@@ -1,0 +1,27 @@
+---
+import { site } from '@config/site';
+---
+
+<footer class="w-full py-12 px-8 border-t border-outline-variant/15 bg-surface-container-low">
+  <div class="flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto">
+    <div class="flex gap-8 font-mono text-[10px] uppercase tracking-widest">
+      {
+        site.footer.links.map((link) => (
+          <a
+            href={link.href}
+            class="text-on-surface/50 hover:text-primary transition-all"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </div>
+    <p class="font-mono text-[10px] uppercase tracking-widest text-on-surface/50">
+      {site.footer.tagline}
+    </p>
+    <div class="flex gap-4">
+      <span class="material-symbols-outlined text-primary">terminal</span>
+      <span class="material-symbols-outlined text-primary">sports_cricket</span>
+    </div>
+  </div>
+</footer>

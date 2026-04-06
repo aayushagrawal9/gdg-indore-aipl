@@ -1,0 +1,20 @@
+---
+import BaseLayout from '@components/layout/BaseLayout.astro';
+import Hero from '@components/landing/Hero.astro';
+import Ticker from '@components/landing/Ticker.astro';
+import ScheduleCarousel from '@components/landing/ScheduleCarousel.astro';
+import Leaderboard from '@components/landing/Leaderboard.astro';
+import Playbook from '@components/landing/Playbook.astro';
+import Partners from '@components/landing/Partners.astro';
+---
+
+<BaseLayout activeNav="Matches">
+  <main>
+    <Hero />
+    <Ticker />
+    <ScheduleCarousel />
+    <Leaderboard />
+    <Playbook />
+    <Partners />
+  </main>
+</BaseLayout>

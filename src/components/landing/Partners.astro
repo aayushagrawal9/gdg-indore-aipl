@@ -1,0 +1,39 @@
+---
+import { partners } from '@config/landing/partners';
+---
+
+<section id="partners" class="py-24 px-6 md:px-8 bg-surface">
+  <div class="max-w-7xl mx-auto">
+    <div class="mb-16 text-center lg:text-left">
+      <h2 class="text-xs font-mono uppercase tracking-widest text-primary mb-2">
+        {partners.eyebrow}
+      </h2>
+      <h3 class="text-3xl md:text-4xl font-headline font-extrabold tracking-tight">
+        {partners.heading}
+      </h3>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div class="col-span-2 row-span-2 glass-card p-12 rounded-xl flex flex-col justify-center items-center text-center kinetic-shimmer">
+        <span class="material-symbols-outlined text-6xl text-primary mb-4">{partners.host.icon}</span>
+        <h4 class="text-3xl font-headline font-extrabold">{partners.host.name}</h4>
+        <p class="text-on-surface-variant mt-2 font-medium">{partners.host.description}</p>
+      </div>
+      {
+        partners.sponsors.map((sponsor) => (
+          <div class="glass-card p-8 rounded-xl flex items-center justify-center hover:bg-surface-container-low transition-all">
+            <span class="font-headline font-bold text-on-surface-variant">{sponsor.name}</span>
+          </div>
+        ))
+      }
+      <div class="col-span-2 glass-card p-8 rounded-xl flex justify-between items-center bg-primary-fixed/5">
+        <div>
+          <span class="text-[10px] font-mono uppercase tracking-widest text-primary block mb-1">
+            {partners.venue.eyebrow}
+          </span>
+          <h5 class="text-xl font-headline font-bold">{partners.venue.name}</h5>
+        </div>
+        <span class="material-symbols-outlined text-primary text-3xl">{partners.venue.icon}</span>
+      </div>
+    </div>
+  </div>
+</section>
