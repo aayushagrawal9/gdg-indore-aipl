@@ -10,7 +10,7 @@ export const partners = {
     {
       name: 'GDG Indore',
       description: 'The Host & Community Engine',
-      logo: '/images/gdg_logo.png',
+      logo: '/images/gdg-logo-new.svg',
     },
     {
       name: 'Women Techmakers',

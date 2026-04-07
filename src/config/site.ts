@@ -11,7 +11,6 @@ export const site = {
     { label: 'Leaderboard', href: '/leaderboard' },
   ],
   cta: { label: 'RSVP', href: 'https://kutt.gdgindore.in/aipl-register' },
-  registerCta: { label: 'Register', href: 'https://kutt.gdgindore.in/aipl-register' },
   footer: {
     tagline: 'Coded with 🏏 and AI by GDG Indore.',
     links: [

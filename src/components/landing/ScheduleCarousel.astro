@@ -1,5 +1,6 @@
 ---
 import { schedule } from '@config/landing/schedule';
+import { site } from '@config/site';
 ---
 
 <section class="py-24 px-6 md:px-8 max-w-7xl mx-auto">
@@ -42,9 +43,9 @@ import { schedule } from '@config/landing/schedule';
               <h4 class="text-2xl font-headline font-bold mb-1">{match.teams}</h4>
               <p class="text-sm text-on-surface-variant font-mono">{match.date}</p>
             </div>
-            <button class={`w-full py-3 rounded-full font-bold text-sm transition-transform ${ctaClasses}`}>
+            <a href={site.cta.href} class={`w-full py-3 rounded-full font-bold text-sm transition-transform text-center inline-block ${ctaClasses}`}>
               {match.ctaLabel}
-            </button>
+            </a>
           </div>
         );
       })
