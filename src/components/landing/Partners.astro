@@ -13,11 +13,16 @@ import { partners } from '@config/landing/partners';
       </h3>
     </div>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-      <div class="col-span-2 row-span-2 glass-card p-12 rounded-xl flex flex-col justify-center items-center text-center kinetic-shimmer">
-        <span class="material-symbols-outlined text-6xl text-primary mb-4">{partners.host.icon}</span>
-        <h4 class="text-3xl font-headline font-extrabold">{partners.host.name}</h4>
-        <p class="text-on-surface-variant mt-2 font-medium">{partners.host.description}</p>
-      </div>
+      {
+        partners.communities.map((community, i) => (
+          <div
+            class={`${i === 0 ? 'col-span-2 row-span-2 p-12' : 'col-span-2 md:col-span-2 p-8'} glass-card rounded-xl flex flex-col justify-center items-center text-center ${i === 0 ? 'kinetic-shimmer' : ''}`}
+          >
+            <img src={community.logo} alt={community.name} class={i === 0 ? 'h-10 mb-4' : 'h-8 mb-3'} />
+            <p class="text-on-surface-variant mt-2 font-medium">{community.description}</p>
+          </div>
+        ))
+      }
       {
         partners.sponsors.map((sponsor) => (
           <div class="glass-card p-8 rounded-xl flex items-center justify-center hover:bg-surface-container-low transition-all">

@@ -10,7 +10,8 @@ export const site = {
     { label: 'Partners', href: '/#partners' },
     { label: 'Leaderboard', href: '/leaderboard' },
   ],
-  cta: { label: 'Leaderboard', href: '/leaderboard' },
+  cta: { label: 'RSVP', href: 'https://kutt.gdgindore.in/' },
+  registerCta: { label: 'Register', href: 'https://kutt.gdgindore.in/' },
   footer: {
     tagline: 'Coded with 🏏 and AI by GDG Indore.',
     links: [

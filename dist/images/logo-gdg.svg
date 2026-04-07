@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 48" fill="none">
+  <!-- Google Developer Groups placeholder logo -->
+  <circle cx="12" cy="24" r="10" fill="#4285F4"/>
+  <circle cx="32" cy="24" r="10" fill="#EA4335"/>
+  <circle cx="52" cy="24" r="10" fill="#FBBC04"/>
+  <circle cx="72" cy="24" r="10" fill="#34A853"/>
+  <text x="90" y="30" font-family="'Inter','Arial',sans-serif" font-weight="700" font-size="18" fill="#3C4043">GDG Indore</text>
+</svg>

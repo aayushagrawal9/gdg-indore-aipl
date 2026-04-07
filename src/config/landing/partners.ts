@@ -1,15 +1,23 @@
 export interface Partner {
   name: string;
+  logo?: string;
 }
 
 export const partners = {
   eyebrow: 'Our Ecosystem',
   heading: 'The Pavilion',
-  host: {
-    name: 'GDG Indore',
-    description: 'The Host & Community Engine',
-    icon: 'groups',
-  },
+  communities: [
+    {
+      name: 'GDG Indore',
+      description: 'The Host & Community Engine',
+      logo: '/images/gdg_logo.png',
+    },
+    {
+      name: 'Women Techmakers',
+      description: 'Diversity & Inclusion Partner',
+      logo: '/images/logo-wtm.svg',
+    },
+  ],
   sponsors: [
     { name: 'Manara Labs' },
     { name: 'Protonshub' },
