@@ -11,6 +11,10 @@ export const site = {
     { label: 'Leaderboard', href: '/leaderboard' },
   ],
   cta: { label: 'RSVP', href: 'https://kutt.gdgindore.in/aipl-register' },
+  features: {
+    leaderboard: false,
+    watchParty: false,
+  },
   footer: {
     tagline: 'Coded with 🏏 and AI by GDG Indore.',
     links: [

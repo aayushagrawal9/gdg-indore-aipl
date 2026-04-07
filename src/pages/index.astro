@@ -6,6 +6,7 @@ import ScheduleCarousel from '@components/landing/ScheduleCarousel.astro';
 import Leaderboard from '@components/landing/Leaderboard.astro';
 import Playbook from '@components/landing/Playbook.astro';
 import Partners from '@components/landing/Partners.astro';
+import { site } from '@config/site';
 ---
 
 <BaseLayout activeNav="Matches">
@@ -13,7 +14,7 @@ import Partners from '@components/landing/Partners.astro';
     <Hero />
     <Ticker />
     <ScheduleCarousel />
-    <Leaderboard />
+    {site.features?.leaderboard && <Leaderboard />}
     <Playbook />
     <Partners />
   </main>

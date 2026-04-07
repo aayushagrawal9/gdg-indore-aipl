@@ -43,9 +43,11 @@ import { site } from '@config/site';
               <h4 class="text-2xl font-headline font-bold mb-1">{match.teams}</h4>
               <p class="text-sm text-on-surface-variant font-mono">{match.date}</p>
             </div>
-            <a href={site.cta.href} class={`w-full py-3 rounded-full font-bold text-sm transition-transform text-center inline-block ${ctaClasses}`}>
-              {match.ctaLabel}
-            </a>
+            {site.features?.watchParty && (
+              <a href={site.cta.href} class={`w-full py-3 rounded-full font-bold text-sm transition-transform text-center inline-block ${ctaClasses}`}>
+                {match.ctaLabel}
+              </a>
+            )}
           </div>
         );
       })

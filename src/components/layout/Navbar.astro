@@ -13,11 +13,18 @@ const { active = 'Matches' } = Astro.props;
 >
   <div class="flex justify-between items-center px-6 md:px-8 py-4 max-w-7xl mx-auto">
     <a href="/" class="flex items-center gap-2">
-      <img src="/images/gdg-logo-new.svg" alt="GDG Indore" />
+      <img src="/images/gdg-logo-new.svg" alt="GDG Indore" class="h-20"/>
     </a>
     <div class="hidden md:flex items-center gap-8 font-headline font-medium text-sm tracking-tight" data-nav-links>
       {
-        site.nav.map((item) => {
+        site.nav
+          .filter((item) => {
+            if (item.label === 'Leaderboard' && !site.features?.leaderboard) {
+              return false;
+            }
+            return true;
+          })
+          .map((item) => {
           const isActive = item.label === active;
           return (
             <a

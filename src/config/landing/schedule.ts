@@ -13,7 +13,7 @@ export const schedule = {
   matches: [
     {
       teams: 'RR vs RCB',
-      date: 'Upcoming',
+      date: '10 April 2026',
       status: 'upcoming',
       ctaLabel: 'Register for Watch Party',
     },
