@@ -10,7 +10,9 @@ export const site = {
     { label: 'Partners', href: '/#partners' },
     { label: 'Leaderboard', href: '/leaderboard' },
   ],
-  cta: { label: 'RSVP', href: 'https://kutt.gdgindore.in/aipl-register' },
+  //cta: { label: 'RSVP', href: 'https://kutt.gdgindore.in/aipl-register' },
+    cta: { label: 'RSVP', href: '/register' },
+
   features: {
     leaderboard: false,
     watchParty: false,
