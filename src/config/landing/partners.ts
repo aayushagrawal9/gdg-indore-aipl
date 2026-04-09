@@ -15,7 +15,7 @@ export const partners = {
     {
       name: 'Women Techmakers',
       description: 'Diversity & Inclusion Partner',
-      logo: '/images/logo-wtm.svg',
+      logo: '/images/wtm-logo.png',
     },
   ],
   sponsors: [
