@@ -19,14 +19,14 @@ export const partners = {
     },
   ],
   sponsors: [
-    { name: 'Manara Labs' },
-    { name: 'Protonshub' },
-    { name: 'Metafic' },
-    { name: 'TechNext' },
+   // { name: 'Manara Labs' },
+  //  { name: 'Protonshub' },
+   // { name: 'Metafic' },
+   // { name: 'TechNext' },
   ] satisfies Partner[],
   venue: {
     eyebrow: 'Venue Partner',
-    name: 'Indore Convention Center',
+    name: 'Hopin Patio Cafe, Indore',
     icon: 'location_on',
   },
 };

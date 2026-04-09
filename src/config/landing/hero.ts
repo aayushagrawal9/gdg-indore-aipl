@@ -1,6 +1,6 @@
 export const hero = {
   badge: 'GDG Indore Presents',
-  title: 'Prompt Premier League (PPL)',
+  title: 'Build With AI- Agentic Premier League (PPL)',
   tagline: 'Watch the Match. Flow with the Code.',
   taglineTwo: 'Win in the Death Overs.',
   primaryCta: { label: 'Join the Next Watch Party', href: '#' },
