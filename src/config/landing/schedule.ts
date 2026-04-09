@@ -12,8 +12,8 @@ export const schedule = {
   heading: 'Upcoming Innings',
   matches: [
     {
-      teams: 'RR vs RCB',
-      date: '10 April 2026',
+      teams: 'PBKS vs SRK',
+      date: '11th April 2026',
       status: 'upcoming',
       ctaLabel: 'Register for Watch Party',
     },
