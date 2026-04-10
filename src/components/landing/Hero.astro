@@ -12,10 +12,14 @@ const { badge, title, tagline, taglineTwo, primaryCta, secondaryCta, image } = h
     >
       <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
       {badge}
+      <img src={badgeImage.src} alt={badgeImage.alt} class="w-80 h-80 object-cover" />
     </div>
-    <h1 class="text-5xl md:text-7xl lg:text-8xl font-headline font-extrabold tracking-tighter leading-[0.9] max-w-4xl">
-      <span class="gemini-gradient">{title}</span>
-    </h1>
+    <h2 class="text-5xl md:text-7xl lg:text-8xl font-headline font-extrabold tracking-tighter leading-[0.9] max-w-4xl">
+      <span>{title}</span>
+    </h2>
+    <h2 class="text-5xl md:text-7xl lg:text-8xl font-headline font-extrabold tracking-tighter leading-[0.9] max-w-4xl">
+      <span>{subTitle}</span>
+    </h2>
     <p class="text-lg md:text-2xl text-on-surface-variant font-headline font-medium max-w-2xl leading-relaxed">
       {tagline} <br />{taglineTwo}
     </p>
