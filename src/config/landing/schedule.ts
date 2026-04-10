@@ -5,6 +5,7 @@ export interface ScheduleMatch {
   date: string;
   status: ScheduleStatus;
   ctaLabel: string;
+  ctaHref: string;
 }
 
 export const schedule = {
@@ -16,6 +17,14 @@ export const schedule = {
       date: '12th April 2026',
       status: 'upcoming',
       ctaLabel: 'Register for Watch Party',
+      ctaHref: '/register'
+    },
+    {
+      teams: 'KRIYETA 5.0 36hrs Women lead National level hackathon',
+      date: '17th-18th April 2026',
+      status: 'upcoming',
+      ctaLabel: 'Register',
+      ctaHref: 'https://unstop.com/hackathons/kriyeta-50-acropolis-institute-of-technology-research-1662045'
     },
   ] satisfies ScheduleMatch[],
 };

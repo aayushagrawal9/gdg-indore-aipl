@@ -44,7 +44,7 @@ import { site } from '@config/site';
               <p class="text-sm text-on-surface-variant font-mono">{match.date}</p>
             </div>
             {site.features?.watchParty && (
-              <a href={site.cta.href} class={`w-full py-3 rounded-full font-bold text-sm transition-transform text-center inline-block ${ctaClasses}`}>
+              <a href={match.ctaHref} class={`w-full py-3 rounded-full font-bold text-sm transition-transform text-center inline-block ${ctaClasses}`}>
                 {match.ctaLabel}
               </a>
             )}
