@@ -12,5 +12,6 @@ export const hero = {
   },
   badgeImage: {
     src: '/images/google-cloud.png',
+    alt: 'Overhead view of a futuristic glowing cricket stadium under soft evening light',
   }
 };
