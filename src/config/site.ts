@@ -17,7 +17,7 @@ export const site = {
       },
 
   features: {
-    leaderboard: false,
+    leaderboard: true,
     watchParty: true,
   },
   footer: {
