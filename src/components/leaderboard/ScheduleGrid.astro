@@ -100,7 +100,8 @@ import { fullSchedule } from '@config/leaderboard/schedule';
        btn.className = 'px-4 py-2 bg-primary text-on-primary rounded-full text-sm font-bold';
       });
       cards.forEach((card) => {
-        const visible = card.getAttribute('data-match-tab') === value;
+        // const visible = card.getAttribute('data-match-tab') === value;
+        const visible = card.getAttribute('data-match-tab') === 'completed';
         (card as HTMLElement).style.display = visible ? '' : 'none';
       });
     };
