@@ -8,23 +8,37 @@ export interface LiveTeam {
 }
 
 export const liveStandings = {
-  heading: 'Current Match Standings',
-  matchId: 'MATCH ID: PPL-992-B',
+  heading: 'Current Scoreboard',
+  matchId: 'MATCH LSG V/S GT',
   teams: [
-    {
+     {
       rank: '01',
-      name: 'Team Neural Nexus',
-      description: 'Prompt Engineering Experts',
-      vibeIndex: 89.4,
+      name: 'Devesh Talreja',
+      vibeIndex: 27,
+      description: 'Gamebit',
       accent: 'secondary',
-      highlighted: true,
+      highlighted: true
     },
     {
       rank: '02',
-      name: 'The Silicon Raiders',
-      description: 'Security Research Collective',
-      vibeIndex: 82.1,
-      accent: 'tertiary',
+      name: 'BJP',
+      description: 'Bhartiya Janta Party (BJP)',
+      vibeIndex: 26,
+      accent: 'tertiary'
+    },
+    {
+      rank: '03',
+      name: 'Phusparaj ',
+      description: '',
+      vibeIndex: 25,
+      accent: 'tertiary'
+    },
+    {
+      rank: '04',
+      name: 'Munish jain',
+      description: '',
+      vibeIndex: 25,
+      accent: 'tertiary'
     },
   ] satisfies LiveTeam[],
 };
