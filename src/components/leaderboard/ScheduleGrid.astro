@@ -8,13 +8,21 @@ import { fullSchedule } from '@config/leaderboard/schedule';
     <div class="flex gap-2" data-schedule-tabs>
       {
         fullSchedule.tabs.map((tab, i) => (
+          // <button
+          //   type="button"
+          //   data-schedule-tab={tab.value}
+          //   class={
+          //     i === 0
+          //       ? 'px-4 py-2 bg-primary text-on-primary rounded-full text-sm font-bold'
+          //       : 'px-4 py-2 bg-surface-container-low hover:bg-surface-container-high text-on-surface rounded-full text-sm font-bold transition-all'
+          //   }
+          // >
+          //   {tab.label}
+          // </button>
           <button
             type="button"
             data-schedule-tab={tab.value}
-            class={
-              i === 1
-                ? 'px-4 py-2 bg-primary text-on-primary rounded-full text-sm font-bold'
-                : 'px-4 py-2 bg-surface-container-low hover:bg-surface-container-high text-on-surface rounded-full text-sm font-bold transition-all'
+            class={ 'px-4 py-2 bg-primary text-on-primary rounded-full text-sm font-bold'
             }
           >
             {tab.label}
