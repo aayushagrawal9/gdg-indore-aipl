@@ -28,7 +28,7 @@ export const fullSchedule = {
       location: 'Hopin Patio Cafe, Indore',
       cta: { label: 'View Results', variant: 'solid' },
       tab: 'completed',
-      highlighted: true,
+      // highlighted: true,
     },
     // {
     //   matchLabel: 'MATCH 13 • ELIMINATOR',
