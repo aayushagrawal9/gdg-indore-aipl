@@ -15,7 +15,7 @@ export interface FullMatch {
 export const fullSchedule = {
   heading: 'Full Match Schedule',
   tabs: [
-    // { label: 'Upcoming', value: 'upcoming' as const },
+    { label: 'Upcoming', value: 'upcoming' as const },
     { label: 'Completed', value: 'completed' as const },
   ],
   matches: [
@@ -28,7 +28,7 @@ export const fullSchedule = {
       location: 'Hopin Patio Cafe, Indore',
       cta: { label: 'View Results', variant: 'solid' },
       tab: 'completed',
-      // highlighted: true,
+      highlighted: true,
     },
     // {
     //   matchLabel: 'MATCH 13 • ELIMINATOR',
