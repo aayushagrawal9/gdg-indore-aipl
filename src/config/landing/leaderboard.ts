@@ -8,7 +8,7 @@ export interface LeaderboardEntry {
 }
 
 export const leaderboard = {
-  eyebrow: 'The Rankings',
+  eyebrow: 'The Overall Rankings',
   heading: 'The Scoreboard Build With AI - Agentic Premier League',
   tabs: ['Overall Event Series', 'Match-by-Match'],
   entries: [
