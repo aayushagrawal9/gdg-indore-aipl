@@ -28,7 +28,7 @@ export const liveStandings = {
     },
     {
       rank: '03',
-      name: 'Phusparaj ',
+      name: 'Pushparaj Singhal',
       description: '',
       vibeIndex: 25,
       accent: 'tertiary'
