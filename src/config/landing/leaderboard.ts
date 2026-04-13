@@ -14,7 +14,7 @@ export const leaderboard = {
   entries: [
     {
       rank: 1,
-      name: 'Devesh Talreja',
+      name: 'Gamebit',
       project: 'Gamebit',
       vibePoints: 27,
       avatar: '/images/profile-aravind.jpg',
@@ -30,7 +30,7 @@ export const leaderboard = {
     },
     {
       rank: 3,
-      name: 'Phusparaj ',
+      name: 'Pushparaj Singhal',
       project: '',
       vibePoints: 25,
       avatar: '/images/profile-rohan.jpg',
