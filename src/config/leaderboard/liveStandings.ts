@@ -9,7 +9,7 @@ export interface LiveTeam {
 
 export const liveStandings = {
   heading: 'Current Scoreboard',
-  matchId: 'MATCH LSG V/S GT',
+  matchId: 'MATCH LSG V/S GT - 12 April 2026',
   teams: [
      {
       rank: '01',
