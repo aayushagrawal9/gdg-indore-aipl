@@ -13,7 +13,7 @@ export const liveStandings = {
   teams: [
      {
       rank: '01',
-      name: 'Gambit',
+      name: 'Devesh Talreja',
       vibeIndex: 27,
       description: 'Gambit',
       accent: 'secondary',
