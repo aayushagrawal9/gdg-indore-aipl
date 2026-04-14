@@ -14,8 +14,8 @@ export const leaderboard = {
   entries: [
     {
       rank: 1,
-      name: 'Gamebit',
-      project: 'Gamebit',
+      name: 'Gambit',
+      project: 'Gambit',
       vibePoints: 27,
       avatar: '/images/profile-aravind.jpg',
       avatarAlt: 'Portrait of Aravind Sharma',

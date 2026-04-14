@@ -13,9 +13,9 @@ export const liveStandings = {
   teams: [
      {
       rank: '01',
-      name: 'Gamebit',
+      name: 'Gambit',
       vibeIndex: 27,
-      description: 'Gamebit',
+      description: 'Gambit',
       accent: 'secondary',
       highlighted: true
     },
