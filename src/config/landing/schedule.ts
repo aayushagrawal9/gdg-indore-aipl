@@ -21,10 +21,17 @@ export const schedule = {
     },
     {
       teams: 'KRIYETA 5.0 36hrs Women lead National level hackathon',
-      date: '17th-18th April 2026',
-      status: 'upcoming',
+      date: '17th-18th-19th April 2026',
+      status: 'completed',
       ctaLabel: 'Register',
       ctaHref: 'https://unstop.com/hackathons/kriyeta-50-acropolis-institute-of-technology-research-1662045'
+    },
+    {
+      teams: 'LSG vs RR',
+      date: '22nd April 2026',
+      status: 'upcoming',
+      ctaLabel: 'Register for Watch Party',
+      ctaHref: '/register'
     },
   ] satisfies ScheduleMatch[],
 };
