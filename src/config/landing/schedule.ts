@@ -13,6 +13,13 @@ export const schedule = {
   heading: 'Upcoming Innings',
   matches: [
     {
+      teams: 'LSG vs RR',
+      date: '22nd April 2026',
+      status: 'upcoming',
+      ctaLabel: 'Register for Watch Party',
+      ctaHref: '/register'
+    },
+    {
       teams: 'LSG vs GT',
       date: '12th April 2026',
       status: 'completed',
@@ -25,13 +32,7 @@ export const schedule = {
       status: 'completed',
       ctaLabel: 'Register',
       ctaHref: 'https://unstop.com/hackathons/kriyeta-50-acropolis-institute-of-technology-research-1662045'
-    },
-    {
-      teams: 'LSG vs RR',
-      date: '22nd April 2026',
-      status: 'upcoming',
-      ctaLabel: 'Register for Watch Party',
-      ctaHref: '/register'
-    },
+    }
+    
   ] satisfies ScheduleMatch[],
 };
