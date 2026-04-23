@@ -18,6 +18,7 @@ export const liveStandings = {
     name: 'Ayush Shinde',
     vibeIndex: 26,
     description: 'Crowd Pulse',
+    accent: 'secondary',
     repoLink: 'https://github.com/theayushshinde/crowd-pulse'
   },
   {
@@ -25,6 +26,7 @@ export const liveStandings = {
     name: 'Pushpraj Singhal',
     vibeIndex: 25,
     description: 'Crowd Pulse Real-Time',
+    accent: 'tertiary',
     repoLink: 'https://github.com/pushprajsinghal/crowd-Pulse-'
   },
   {
@@ -32,6 +34,7 @@ export const liveStandings = {
     name: 'Munish Jain',
     vibeIndex: 25,
     description: 'Crowd Pulse',
+    accent: 'tertiary',
     repoLink: 'https://github.com/munishhhh/Projectt'
   },
     {
@@ -39,6 +42,7 @@ export const liveStandings = {
     name: 'Devesh Talreja',
     vibeIndex: 23,
     description: 'Gambit',
+    accent: 'tertiary',
     repoLink: 'https://github.com/devesh-talreja/CricketPulse-Ai'
   },
   {
@@ -46,6 +50,7 @@ export const liveStandings = {
     name: 'Hustlers',
     vibeIndex: 23,
     description: 'CricGraph',
+    accent: 'tertiary',
     repoLink: 'https://github.com/KrishnaG-101/IPL-Knowledge'
   },
   {
@@ -53,6 +58,7 @@ export const liveStandings = {
     name: 'Bhartiya Janta Party',
     vibeIndex: 22,
     description: 'CricPulse',
+    accent: 'tertiary',
     repoLink: 'https://github.com/YusufMali001/CricPulse'
   },
   {
@@ -60,6 +66,7 @@ export const liveStandings = {
     name: 'Rizwan Sheikh',
     vibeIndex: 21,
     description: 'Crowd',
+    accent: 'tertiary',
     repoLink: 'https://github.com/Rizwan050505/GDG-APL-'
   },
   {
@@ -67,6 +74,7 @@ export const liveStandings = {
     name: 'Meet Agrawal',
     vibeIndex: 20,
     description: 'Crowd-Pulse',
+    accent: 'tertiary',
     repoLink: 'https://github.com/meetagrawal8989-cmyk/crow'
   },
   {
@@ -74,6 +82,7 @@ export const liveStandings = {
     name: 'Krishna Nema',
     vibeIndex: 19,
     description: 'Live Tactile Analysis',
+    accent: 'tertiary',
     repoLink: 'https://github.com/Krish09112004/apl-2'
   },
   {
@@ -81,13 +90,15 @@ export const liveStandings = {
     name: 'Siddhi Khatri',
     vibeIndex: 17,
     description: '',
-    repoLink: ''
+    repoLink: '',
+    accent: 'tertiary',
   },
   {
     rank: '11',
     name: 'Havoc Breakers',
     vibeIndex: 17,
     description: 'Roargraph',
+    accent: 'tertiary',
     repoLink: 'https://github.com/APL-Heavok-Wreakers/roargraph'
   },
   {
@@ -95,6 +106,7 @@ export const liveStandings = {
     name: 'Vivek Vishwakarma',
     vibeIndex: 15,
     description: 'Crowd Pulse Real-Time',
+    accent: 'tertiary',
     repoLink: 'https://github.com/Vivek-2004V/CrowdPulse.git'
   },
   {
@@ -102,6 +114,7 @@ export const liveStandings = {
     name: 'Quantum Arcade',
     vibeIndex: 14,
     description: 'Crowd Pulse',
+    accent: 'tertiary',
     repoLink: 'https://github.com/ashudotdev/apl_gdg'
   },
   {
@@ -109,13 +122,15 @@ export const liveStandings = {
     name: 'Imaginary Thinkers',
     vibeIndex: 13,
     description: 'Tactic Graph',
-    repoLink: ''
+    repoLink: '',
+    accent: 'tertiary'
   },
   {
     rank: '15',
     name: 'Devansh Kumar Patidar',
     vibeIndex: 9,
     description: 'Cricket Tactics',
+    accent: 'tertiary',
     repoLink: 'https://github.com/DKP-RGB/cricket-tactics'
   },
   {
@@ -123,6 +138,7 @@ export const liveStandings = {
     name: 'Prajwal Singh',
     vibeIndex: 20,
     description: 'Crickty',
+    accent: 'tertiary',
     repoLink: 'https://github.com/Mango-Piety/apl-crickty'
   },
   {
@@ -130,6 +146,7 @@ export const liveStandings = {
     name: 'Fellow Dev',
     vibeIndex: 21,
     description: 'Crowd Pulse Real-Time',
+    accent: 'tertiary',
     repoLink: 'https://github.com/neeraj5050/APL-22'
   },
   {
@@ -137,6 +154,7 @@ export const liveStandings = {
     name: 'Xcode',
     vibeIndex: 7,
     description: 'ipl22',
+    accent: 'tertiary',
     repoLink: 'https://github.com/namdevdivyansh406/ip22.git'
   },
   {
@@ -144,6 +162,7 @@ export const liveStandings = {
     name: 'Aagam',
     vibeIndex: 5,
     description: 'apl predictor',
+    accent: 'tertiary',
     repoLink: 'https://github.com/aagamjain-art/APL-Predictor'
   }
 
