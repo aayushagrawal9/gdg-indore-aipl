@@ -15,19 +15,19 @@ export const liveStandings = {
   [
   {
     rank: '01',
-    name: 'Ayush Shinde',
+    name: 'Crowd Pulse',
     vibeIndex: 26,
     description: 'Crowd Pulse',
     accent: 'secondary',
     repoLink: 'https://github.com/theayushshinde/crowd-pulse'
   },
-  {
+    {
     rank: '02',
-    name: 'Pushpraj Singhal',
-    vibeIndex: 25,
-    description: 'Crowd Pulse Real-Time',
+    name: 'Bhartiya Janta Party',
+    vibeIndex: 26,
+    description: '(BJP)',
     accent: 'tertiary',
-    repoLink: 'https://github.com/pushprajsinghal/crowd-Pulse-'
+    repoLink: ''
   },
   {
     rank: '03',
@@ -55,14 +55,6 @@ export const liveStandings = {
   },
   {
     rank: '06',
-    name: 'Bhartiya Janta Party',
-    vibeIndex: 22,
-    description: 'CricPulse',
-    accent: 'tertiary',
-    repoLink: 'https://github.com/YusufMali001/CricPulse'
-  },
-  {
-    rank: '07',
     name: 'Rizwan Sheikh',
     vibeIndex: 21,
     description: 'Crowd',
@@ -70,7 +62,7 @@ export const liveStandings = {
     repoLink: 'https://github.com/Rizwan050505/GDG-APL-'
   },
   {
-    rank: '08',
+    rank: '07',
     name: 'Meet Agrawal',
     vibeIndex: 20,
     description: 'Crowd-Pulse',
@@ -78,7 +70,7 @@ export const liveStandings = {
     repoLink: 'https://github.com/meetagrawal8989-cmyk/crow'
   },
   {
-    rank: '09',
+    rank: '08',
     name: 'Krishna Nema',
     vibeIndex: 19,
     description: 'Live Tactile Analysis',
@@ -86,7 +78,7 @@ export const liveStandings = {
     repoLink: 'https://github.com/Krish09112004/apl-2'
   },
   {
-    rank: '10',
+    rank: '09',
     name: 'Siddhi Khatri',
     vibeIndex: 17,
     description: '',
@@ -94,7 +86,7 @@ export const liveStandings = {
     accent: 'tertiary',
   },
   {
-    rank: '11',
+    rank: '10',
     name: 'Havoc Breakers',
     vibeIndex: 17,
     description: 'Roargraph',
@@ -102,7 +94,7 @@ export const liveStandings = {
     repoLink: 'https://github.com/APL-Heavok-Wreakers/roargraph'
   },
   {
-    rank: '12',
+    rank: '11',
     name: 'Vivek Vishwakarma',
     vibeIndex: 15,
     description: 'Crowd Pulse Real-Time',
@@ -110,7 +102,7 @@ export const liveStandings = {
     repoLink: 'https://github.com/Vivek-2004V/CrowdPulse.git'
   },
   {
-    rank: '13',
+    rank: '12',
     name: 'Quantum Arcade',
     vibeIndex: 14,
     description: 'Crowd Pulse',
@@ -118,7 +110,7 @@ export const liveStandings = {
     repoLink: 'https://github.com/ashudotdev/apl_gdg'
   },
   {
-    rank: '14',
+    rank: '13',
     name: 'Imaginary Thinkers',
     vibeIndex: 13,
     description: 'Tactic Graph',
@@ -126,7 +118,7 @@ export const liveStandings = {
     accent: 'tertiary'
   },
   {
-    rank: '15',
+    rank: '14',
     name: 'Devansh Kumar Patidar',
     vibeIndex: 9,
     description: 'Cricket Tactics',
@@ -134,7 +126,7 @@ export const liveStandings = {
     repoLink: 'https://github.com/DKP-RGB/cricket-tactics'
   },
   {
-    rank: '16',
+    rank: '15',
     name: 'Prajwal Singh',
     vibeIndex: 20,
     description: 'Crickty',
@@ -142,7 +134,7 @@ export const liveStandings = {
     repoLink: 'https://github.com/Mango-Piety/apl-crickty'
   },
   {
-    rank: '17',
+    rank: '16',
     name: 'Fellow Dev',
     vibeIndex: 21,
     description: 'Crowd Pulse Real-Time',
@@ -150,7 +142,7 @@ export const liveStandings = {
     repoLink: 'https://github.com/neeraj5050/APL-22'
   },
   {
-    rank: '18',
+    rank: '17',
     name: 'Xcode',
     vibeIndex: 7,
     description: 'ipl22',
@@ -158,7 +150,7 @@ export const liveStandings = {
     repoLink: 'https://github.com/namdevdivyansh406/ip22.git'
   },
   {
-    rank: '19',
+    rank: '18',
     name: 'Aagam',
     vibeIndex: 5,
     description: 'apl predictor',
