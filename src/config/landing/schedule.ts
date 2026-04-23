@@ -15,7 +15,7 @@ export const schedule = {
     {
       teams: 'LSG vs RR',
       date: '22nd April 2026',
-      status: 'upcoming',
+      status: 'completed',
       ctaLabel: 'Register for Watch Party',
       ctaHref: '/register'
     },
