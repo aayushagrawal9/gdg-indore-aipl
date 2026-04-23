@@ -44,5 +44,6 @@ export const leaderboard = {
     avatar: "/images/profile-rohan.jpg",
     avatarAlt: "Portrait of Rohan Verma"
   }
+  
 ] satisfies LeaderboardEntry[],
 };
