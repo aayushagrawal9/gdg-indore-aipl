@@ -3,159 +3,176 @@ export interface LiveTeam {
   name: string;
   description: string;
   vibeIndex: number;
-  accent: 'secondary' | 'tertiary';
+  accent?: 'secondary' | 'tertiary';
   highlighted?: boolean;
   repoLink: string;
 }
 
 export const liveStandings = {
   heading: 'Current Scoreboard',
-  matchId: 'MATCH LSG V/S GT - 12 April 2026',
+  matchId: 'Total Ranking',
   teams: [
-     {
-      rank: '01',
-      name: 'Devesh Talreja',
-      vibeIndex: 27,
-      description: 'Gambit',
-      accent: 'secondary',
-      highlighted: true,
-      repoLink: 'https://github.com/devesh-talreja/CricketPulse-Ai'
-    },
-    {
-      rank: '02',
-      name: 'BJP',
-      description: 'Bhartiya Janta Party (BJP)',
-      vibeIndex: 26,
-      accent: 'tertiary',
-      repoLink: ''
-    },
-    {
-      rank: '03',
-      name: 'Pushparaj Singhal',
-      description: '',
-      vibeIndex: 25,
-      accent: 'tertiary',
-      repoLink: 'https://github.com/pushprajsinghal'
-    },
-    {
-    rank: '04',
-    name: 'Munish jain',
-    description: '',
-    vibeIndex: 25,
+  {
+    rank: '01',
+    name: 'Devesh Talreja',
+    vibeIndex: 27,
+    description: 'Gambit',
+    highlighted: true,
+    accent: 'secondary',
+    repoLink: 'https://github.com/devesh-talreja/CricketPulse-Ai'
+  },
+  {
+    rank: '02',
+    name: 'Ayush Shinde',
+    vibeIndex: 26,
+    description: 'Crowd Pulse',
+    highlighted: false,
+    accent: 'tertiary',
+    repoLink: 'https://github.com/theayushshinde/crowd-pulse'
+  },
+  {
+    rank: '03',
+    name: 'BJP',
+    vibeIndex: 26,
+    description: 'Bhartiya Janta Party (BJP)',
+    highlighted: false,
     accent: 'tertiary',
     repoLink: ''
+  },
+  {
+    rank: '04',
+    name: 'Pushparaj Singhal',
+    vibeIndex: 25,
+    description: 'Crowd Pulse Real-Time',
+    highlighted: false,
+    accent: 'tertiary',
+    repoLink: 'https://github.com/pushprajsinghal/crowd-Pulse-'
   },
   {
     rank: '05',
-    name: 'Build Algos',
-    description: '',
-    vibeIndex: 24,
+    name: 'Munish Jain',
+    vibeIndex: 25,
+    description: 'Crowd Pulse',
+    highlighted: false,
     accent: 'tertiary',
-    repoLink: ''
+    repoLink: 'https://github.com/munishhhh/Projectt'
   },
   {
     rank: '06',
-    name: 'Codex',
-    description: '',
+    name: 'Build Algos',
     vibeIndex: 24,
+    description: '',
+    highlighted: false,
     accent: 'tertiary',
     repoLink: ''
   },
   {
     rank: '07',
-    name: 'Team ethics',
+    name: 'Codex',
+    vibeIndex: 24,
     description: '',
-    vibeIndex: 23,
+    highlighted: false,
     accent: 'tertiary',
     repoLink: ''
   },
   {
     rank: '08',
-    name: 'Kushagra misra',
-    description: '',
-    vibeIndex: 23,
+    name: 'Cyber-squad',
+    vibeIndex: 25,
+    description: 'Crowd Pulse Real-Time',
+    highlighted: false,
     accent: 'tertiary',
-    repoLink: 'https://github.com/kush-mish/pitchside'
+    repoLink: 'https://github.com/Aniket1603/crowd-pulse'
   },
   {
     rank: '09',
-    name: 'StadiumPulse',
-    description: '',
+    name: 'Team ethics',
     vibeIndex: 23,
+    description: '',
+    highlighted: false,
     accent: 'tertiary',
     repoLink: ''
   },
   {
     rank: '10',
-    name: 'Ethics',
+    name: 'Kushagra misra',
+    vibeIndex: 23,
     description: '',
-    vibeIndex: 22,
+    highlighted: false,
     accent: 'tertiary',
-    repoLink: ''
+    repoLink: 'https://github.com/kush-mish/pitchside'
   },
   {
     rank: '11',
-    name: 'Samyak choudhary ',
+    name: 'StadiumPulse',
+    vibeIndex: 23,
     description: '',
-    vibeIndex: 22,
+    highlighted: false,
     accent: 'tertiary',
     repoLink: ''
   },
   {
     rank: '12',
-    name: 'Hustlers',
-    description: '',
-    vibeIndex: 21,
+    name: 'Devesh talreja',
+    vibeIndex: 24,
+    description: 'GraphOracle',
+    highlighted: false,
     accent: 'tertiary',
-    repoLink: ''
+    repoLink: 'https://github.com/devesh-talreja/GraphOracle'
   },
   {
     rank: '13',
-    name: 'Faluda',
+    name: 'Ethics',
+    vibeIndex: 22,
     description: '',
-    vibeIndex: 21,
+    highlighted: false,
     accent: 'tertiary',
     repoLink: ''
   },
   {
     rank: '14',
-    name: 'Byte Avengers ',
+    name: 'Samyak choudhary',
+    vibeIndex: 22,
     description: '',
-    vibeIndex: 17,
-    accent: 'tertiary',
-    repoLink: 'https://github.com/BikalpShukla/Cricfanvibes.git'
-  },
-  {
-    rank: '15',
-    name: 'Rockcode',
-    description: '',
-    vibeIndex: 17,
+    highlighted: false,
     accent: 'tertiary',
     repoLink: ''
   },
   {
+    rank: '15',
+    name: 'Hustlers',
+    vibeIndex: 21,
+    description: 'CricGraph',
+    highlighted: false,
+    accent: 'tertiary',
+    repoLink: 'https://github.com/KrishnaG-101/IPL-Knowledge'
+  },
+  {
     rank: '16',
-    name: 'Samyak Choudhary ',
+    name: 'Faluda',
+    vibeIndex: 21,
     description: '',
-    vibeIndex: 10,
+    highlighted: false,
     accent: 'tertiary',
     repoLink: ''
   },
   {
     rank: '17',
-    name: 'Dropcode ',
+    name: 'Byte Avengers',
+    vibeIndex: 17,
     description: '',
-    vibeIndex: 9,
+    highlighted: false,
     accent: 'tertiary',
-    repoLink: ''
+    repoLink: 'https://github.com/BikalpShukla/Cricfanvibes.git'
   },
   {
     rank: '18',
-    name: 'Prajjwal Singh',
-    description: 'UP187',
-    vibeIndex: 9,
+    name: 'Rockcode',
+    vibeIndex: 17,
+    description: '',
+    highlighted: false,
     accent: 'tertiary',
-    repoLink: 'https://github.com/Mango-Piety/stadiumpulse'
+    repoLink: ''
   }
   ] satisfies LiveTeam[],
 };
