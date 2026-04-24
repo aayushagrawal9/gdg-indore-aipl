@@ -28,22 +28,22 @@ export const leaderboard = {
     avatar: "/images/profile-rohan.jpg",
     avatarAlt: "Portrait of Rohan Verma"
   },
-  {
+   {
     rank: 3,
+    name: 'Devesh Talreja',
+    project: "Gambit",
+    vibePoints: 25.5,
+      avatar: "/images/profile-rohan.jpg",
+    avatarAlt: "Portrait of Rohan Verma"
+  },
+  {
+    rank: 4,
     name: "Munish Jain",
     project: "Crowd Pulse",
     vibePoints: 25,
     avatar: "/images/profile-rohan.jpg",
     avatarAlt: "Portrait of Rohan Verma",
-  },
-  {
-    rank: 4,
-    name: "Pushparaj Singhal",
-    project: "Crowd Pulse Real-Time",
-    vibePoints: 25,
-    avatar: "/images/profile-rohan.jpg",
-    avatarAlt: "Portrait of Rohan Verma"
   }
-  
+
 ] satisfies LeaderboardEntry[],
 };

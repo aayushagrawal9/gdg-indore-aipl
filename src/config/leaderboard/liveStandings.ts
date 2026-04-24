@@ -29,21 +29,21 @@ export const liveStandings = {
     accent: 'tertiary',
     repoLink: ''
   },
-  {
+    {
     rank: '03',
+    name: 'Devesh Talreja',
+    vibeIndex: 25.5,
+    description: 'Gambit',
+    accent: 'tertiary',
+    repoLink: 'https://github.com/devesh-talreja/CricketPulse-Ai'
+  },
+  {
+    rank: '04',
     name: 'Munish Jain',
     vibeIndex: 25,
     description: 'Crowd Pulse',
     accent: 'tertiary',
     repoLink: 'https://github.com/munishhhh/Projectt'
-  },
-    {
-    rank: '04',
-    name: 'Devesh Talreja',
-    vibeIndex: 23,
-    description: 'Gambit',
-    accent: 'tertiary',
-    repoLink: 'https://github.com/devesh-talreja/CricketPulse-Ai'
   },
   {
     rank: '05',
