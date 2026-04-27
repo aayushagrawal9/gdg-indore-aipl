@@ -88,47 +88,47 @@ function getInitials(name: string) {
       </div>
 
       <!-- Cumulative Total List -->
-      <div id="standings-total" class="grid grid-cols-1 gap-4 block">
+      <div id="standings-total" class="grid grid-cols-1 gap-4 max-h-[550px] overflow-y-auto pr-2 block">
         {
           totalStandings.map((entry, i) => {
             const isFirst = i === 0;
             const bIdx = i < 3 ? i : 3;
             const rank = i + 1;
             return isFirst ? (
-              <div class="glass-card p-8 rounded-xl flex flex-col md:flex-row items-center gap-8 border-2 border-yellow-400 shadow-[0_0_30px_rgba(250,204,21,0.15)] relative overflow-hidden">
-                <div class="absolute top-0 right-0 p-4">
-                  <span class="material-symbols-outlined text-yellow-400 text-4xl" style="font-variation-settings: 'FILL' 1;">
+              <div class="glass-card p-4 md:p-8 rounded-xl flex items-center gap-4 md:gap-8 border-2 border-yellow-400 shadow-[0_0_30px_rgba(250,204,21,0.15)] relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-2 md:p-4">
+                  <span class="material-symbols-outlined text-yellow-400 text-2xl md:text-4xl" style="font-variation-settings: 'FILL' 1;">
                     workspace_premium
                   </span>
                 </div>
-                <div class="text-6xl font-mono font-bold text-yellow-400 opacity-50">0{rank}</div>
-                <div class="w-20 h-20 rounded-full bg-surface-container-high border-2 border-white overflow-hidden flex items-center justify-center text-2xl font-bold text-on-surface-variant font-mono">
+                <div class="text-3xl md:text-6xl font-mono font-bold text-yellow-400 opacity-50">0{rank}</div>
+                <div class="w-12 h-12 md:w-20 md:h-20 rounded-full bg-surface-container-high border-2 border-white overflow-hidden flex items-center justify-center text-lg md:text-2xl font-bold text-on-surface-variant font-mono flex-shrink-0">
                   {getInitials(entry.name)}
                 </div>
-                <div class="flex-1 text-center md:text-left">
-                  <h4 class="text-2xl font-headline font-extrabold">{entry.name}</h4>
-                  <p class="text-primary font-mono text-sm">{entry.project}</p>
+                <div class="flex-1 text-left min-w-0">
+                  <h4 class="text-base md:text-2xl font-headline font-extrabold truncate">{entry.name}</h4>
+                  <p class="text-primary font-mono text-[10px] md:text-sm truncate">{entry.project}</p>
                 </div>
-                <div class="text-center md:text-right">
-                  <div class="text-xs font-mono uppercase text-on-surface-variant mb-1">Total Vibe Points</div>
-                  <div class="text-4xl font-headline font-extrabold text-primary">
+                <div class="text-right flex-shrink-0 z-10">
+                  <div class="text-[9px] md:text-xs font-mono uppercase text-on-surface-variant mb-1">Pts</div>
+                  <div class="text-2xl md:text-4xl font-headline font-extrabold text-primary">
                     {entry.totalPoints.toLocaleString()}
                   </div>
                 </div>
               </div>
             ) : (
-              <div class={`glass-card p-6 rounded-xl flex flex-col md:flex-row items-center gap-6 border-l-8 ${medalBorder[bIdx]}`}>
-                <div class={`text-4xl font-mono font-bold ${medalText[bIdx]}`}>{rank < 10 ? `0${rank}` : rank}</div>
-                <div class="w-16 h-16 rounded-full bg-surface-container-high overflow-hidden flex items-center justify-center text-xl font-bold text-on-surface-variant font-mono">
+              <div class={`glass-card p-4 md:p-6 rounded-xl flex items-center gap-4 md:gap-6 border-l-4 md:border-l-8 ${medalBorder[bIdx]}`}>
+                <div class={`text-2xl md:text-4xl font-mono font-bold ${medalText[bIdx]}`}>{rank < 10 ? `0${rank}` : rank}</div>
+                <div class="w-10 h-10 md:w-16 md:h-16 rounded-full bg-surface-container-high overflow-hidden flex items-center justify-center text-sm md:text-xl font-bold text-on-surface-variant font-mono flex-shrink-0">
                   {getInitials(entry.name)}
                 </div>
-                <div class="flex-1 text-center md:text-left">
-                  <h4 class="text-xl font-headline font-bold">{entry.name}</h4>
-                  <p class="text-on-surface-variant font-mono text-xs">{entry.project}</p>
+                <div class="flex-1 text-left min-w-0">
+                  <h4 class="text-sm md:text-xl font-headline font-bold truncate">{entry.name}</h4>
+                  <p class="text-on-surface-variant font-mono text-[10px] md:text-xs truncate">{entry.project}</p>
                 </div>
-                <div class="text-center md:text-right">
-                  <div class="text-[10px] font-mono uppercase text-on-surface-variant">Total Points</div>
-                  <div class="text-2xl font-headline font-extrabold">
+                <div class="text-right flex-shrink-0">
+                  <div class="text-[8px] md:text-[10px] font-mono uppercase text-on-surface-variant">Pts</div>
+                  <div class="text-xl md:text-2xl font-headline font-extrabold">
                     {entry.totalPoints.toLocaleString()}
                   </div>
                 </div>
@@ -139,51 +139,51 @@ function getInitials(name: string) {
       </div>
 
       <!-- Average Performance List -->
-      <div id="standings-average" class="grid grid-cols-1 gap-4 hidden">
+      <div id="standings-average" class="grid grid-cols-1 gap-4 max-h-[550px] overflow-y-auto pr-2 hidden">
         {
           averageStandings.map((entry, i) => {
             const isFirst = i === 0;
             const bIdx = i < 3 ? i : 3;
             const rank = i + 1;
             return isFirst ? (
-              <div class="glass-card p-8 rounded-xl flex flex-col md:flex-row items-center gap-8 border-2 border-yellow-400 shadow-[0_0_30px_rgba(250,204,21,0.15)] relative overflow-hidden">
-                <div class="absolute top-0 right-0 p-4">
-                  <span class="material-symbols-outlined text-yellow-400 text-4xl" style="font-variation-settings: 'FILL' 1;">
+              <div class="glass-card p-4 md:p-8 rounded-xl flex items-center gap-4 md:gap-8 border-2 border-yellow-400 shadow-[0_0_30px_rgba(250,204,21,0.15)] relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-2 md:p-4">
+                  <span class="material-symbols-outlined text-yellow-400 text-2xl md:text-4xl" style="font-variation-settings: 'FILL' 1;">
                     workspace_premium
                   </span>
                 </div>
-                <div class="text-6xl font-mono font-bold text-yellow-400 opacity-50">0{rank}</div>
-                <div class="w-20 h-20 rounded-full bg-surface-container-high border-2 border-white overflow-hidden flex items-center justify-center text-2xl font-bold text-on-surface-variant font-mono">
+                <div class="text-3xl md:text-6xl font-mono font-bold text-yellow-400 opacity-50">0{rank}</div>
+                <div class="w-12 h-12 md:w-20 md:h-20 rounded-full bg-surface-container-high border-2 border-white overflow-hidden flex items-center justify-center text-lg md:text-2xl font-bold text-on-surface-variant font-mono flex-shrink-0">
                   {getInitials(entry.name)}
                 </div>
-                <div class="flex-1 text-center md:text-left">
-                  <h4 class="text-2xl font-headline font-extrabold">{entry.name}</h4>
-                  <p class="text-primary font-mono text-sm">{entry.project}</p>
+                <div class="flex-1 text-left min-w-0">
+                  <h4 class="text-base md:text-2xl font-headline font-extrabold truncate">{entry.name}</h4>
+                  <p class="text-primary font-mono text-[10px] md:text-sm truncate">{entry.project}</p>
                 </div>
-                <div class="text-center md:text-right">
-                  <div class="text-xs font-mono uppercase text-on-surface-variant mb-1">Avg Vibe Points</div>
-                  <div class="text-4xl font-headline font-extrabold text-primary">
+                <div class="text-right flex-shrink-0 z-10">
+                  <div class="text-[9px] md:text-xs font-mono uppercase text-on-surface-variant mb-0.5">Avg</div>
+                  <div class="text-2xl md:text-4xl font-headline font-extrabold text-primary">
                     {entry.averagePoints.toLocaleString()}
                   </div>
-                  <div class="text-[10px] font-mono text-on-surface-variant mt-1">({entry.matchesAttended} matches)</div>
+                  <div class="text-[8px] md:text-[10px] font-mono text-on-surface-variant">({entry.matchesAttended} match)</div>
                 </div>
               </div>
             ) : (
-              <div class={`glass-card p-6 rounded-xl flex flex-col md:flex-row items-center gap-6 border-l-8 ${medalBorder[bIdx]}`}>
-                <div class={`text-4xl font-mono font-bold ${medalText[bIdx]}`}>{rank < 10 ? `0${rank}` : rank}</div>
-                <div class="w-16 h-16 rounded-full bg-surface-container-high overflow-hidden flex items-center justify-center text-xl font-bold text-on-surface-variant font-mono">
+              <div class={`glass-card p-4 md:p-6 rounded-xl flex items-center gap-4 md:gap-6 border-l-4 md:border-l-8 ${medalBorder[bIdx]}`}>
+                <div class={`text-2xl md:text-4xl font-mono font-bold ${medalText[bIdx]}`}>{rank < 10 ? `0${rank}` : rank}</div>
+                <div class="w-10 h-10 md:w-16 md:h-16 rounded-full bg-surface-container-high overflow-hidden flex items-center justify-center text-sm md:text-xl font-bold text-on-surface-variant font-mono flex-shrink-0">
                   {getInitials(entry.name)}
                 </div>
-                <div class="flex-1 text-center md:text-left">
-                  <h4 class="text-xl font-headline font-bold">{entry.name}</h4>
-                  <p class="text-on-surface-variant font-mono text-xs">{entry.project}</p>
+                <div class="flex-1 text-left min-w-0">
+                  <h4 class="text-sm md:text-xl font-headline font-bold truncate">{entry.name}</h4>
+                  <p class="text-on-surface-variant font-mono text-[10px] md:text-xs truncate">{entry.project}</p>
                 </div>
-                <div class="text-center md:text-right">
-                  <div class="text-[10px] font-mono uppercase text-on-surface-variant">Avg Points</div>
-                  <div class="text-2xl font-headline font-extrabold">
+                <div class="text-right flex-shrink-0">
+                  <div class="text-[8px] md:text-[10px] font-mono uppercase text-on-surface-variant">Avg</div>
+                  <div class="text-xl md:text-2xl font-headline font-extrabold">
                     {entry.averagePoints.toLocaleString()}
                   </div>
-                  <div class="text-[9px] font-mono text-on-surface-variant mt-0.5">({entry.matchesAttended} matches)</div>
+                  <div class="text-[8px] md:text-[9px] font-mono text-on-surface-variant">({entry.matchesAttended} match)</div>
                 </div>
               </div>
             );
@@ -278,11 +278,11 @@ function getInitials(name: string) {
         // Show/hide lists
         const metric = btn.getAttribute('data-metric');
         if (metric === 'average') {
-          if (standingsTotal) standingsTotal.className = 'grid grid-cols-1 gap-4 hidden';
-          if (standingsAverage) standingsAverage.className = 'grid grid-cols-1 gap-4 block';
+          if (standingsTotal) { standingsTotal.classList.remove('block'); standingsTotal.classList.add('hidden'); }
+          if (standingsAverage) { standingsAverage.classList.remove('hidden'); standingsAverage.classList.add('block'); }
         } else {
-          if (standingsTotal) standingsTotal.className = 'grid grid-cols-1 gap-4 block';
-          if (standingsAverage) standingsAverage.className = 'grid grid-cols-1 gap-4 hidden';
+          if (standingsTotal) { standingsTotal.classList.remove('hidden'); standingsTotal.classList.add('block'); }
+          if (standingsAverage) { standingsAverage.classList.remove('block'); standingsAverage.classList.add('hidden'); }
         }
       });
     });
