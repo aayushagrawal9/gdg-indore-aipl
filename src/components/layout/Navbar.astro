@@ -19,7 +19,7 @@ const { active = 'Matches' } = Astro.props;
       {
         site.nav
           .filter((item) => {
-            if (item.label === 'Leaderboard' && !site.features?.leaderboard) {
+            if (item.label === 'Scoreboard' && !site.features?.leaderboard) {
               return false;
             }
             return true;
