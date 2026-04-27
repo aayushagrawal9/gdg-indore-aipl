@@ -36,7 +36,7 @@ import { aiplEvents } from '@config/leaderboard/events';
   </div>
 
   <!-- All event rows, tagged with data-event-id; JS handles visibility -->
-  <div class="space-y-3" id="standings-body">
+  <div class="space-y-3 max-h-[450px] overflow-y-auto pr-2" id="standings-body">
     {
       aiplEvents.map((event) =>
         event.entries.map((team, idx) => {

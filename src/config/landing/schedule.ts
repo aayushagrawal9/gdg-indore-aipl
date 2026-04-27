@@ -13,6 +13,13 @@ export const schedule = {
   heading: 'Upcoming Innings',
   matches: [
     {
+      teams: 'RR vs DC',
+      date: '1st May 2026',
+      status: 'upcoming',
+      ctaLabel: 'Register for Watch Party',
+      ctaHref: 'https://aipl.gdgindore.in/register/'
+    },
+    {
       teams: 'LSG vs RR',
       date: '22nd April 2026',
       status: 'completed',

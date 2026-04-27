@@ -1,8 +1,39 @@
 ---
 import { leaderboard } from '@config/landing/leaderboard';
+import { aiplEvents, computeStandings } from '@config/leaderboard/events';
 
-const medalBorder = ['border-yellow-400', 'border-slate-300', 'border-amber-600'];
-const medalText = ['text-yellow-400', 'text-slate-400', 'text-amber-600'];
+const cumulativeStandings = computeStandings(aiplEvents);
+
+// Tab 0: Overall Standings (Cumulative Total)
+const totalStandings = [...cumulativeStandings]
+  .sort((a, b) => b.totalPoints - a.totalPoints)
+  .slice(0, 10);
+
+// Tab 0 Sub-view: Average Performance
+const averageStandings = [...cumulativeStandings]
+  .sort((a, b) => {
+    if (b.averagePoints === a.averagePoints) {
+      return b.totalPoints - a.totalPoints; // Tie breaker
+    }
+    return b.averagePoints - a.averagePoints;
+  })
+  .slice(0, 10);
+
+// Tab 1: Match-by-Match Winners
+const matchWinners = aiplEvents.map((event) => {
+  return {
+    date: event.label,
+    match: event.iplMatch,
+    winner: event.entries.length > 0 ? event.entries[0] : null,
+  };
+});
+
+const medalBorder = ['border-yellow-400', 'border-slate-300', 'border-amber-600', 'border-surface-variant'];
+const medalText = ['text-yellow-400', 'text-slate-400', 'text-amber-600', 'text-on-surface-variant'];
+
+function getInitials(name: string) {
+  return name.substring(0, 2).toUpperCase();
+}
 ---
 
 <section id="leaderboard" class="py-24 bg-surface-container-low">
@@ -17,86 +48,242 @@ const medalText = ['text-yellow-400', 'text-slate-400', 'text-amber-600'];
     </div>
     <div class="flex justify-center mb-12">
       <div class="inline-flex p-1 bg-surface-container-highest rounded-full" data-leaderboard-tabs>
+        <button
+          type="button"
+          data-tab-index="0"
+          class="px-6 py-2 rounded-full bg-white shadow-sm font-headline font-bold text-sm"
+        >
+          Overall Event Series
+        </button>
+        <button
+          type="button"
+          data-tab-index="1"
+          class="px-6 py-2 rounded-full text-on-surface-variant font-headline font-medium text-sm hover:text-on-surface"
+        >
+          Match-by-Match Winners
+        </button>
+      </div>
+    </div>
+
+    <!-- TAB 0: OVERALL SERIES -->
+    <div data-tab-content="0" class="block">
+      <!-- Sub-Toggle for Cumulative vs Average -->
+      <div class="flex justify-center mb-8">
+        <div class="inline-flex p-1 bg-surface-container-high rounded-full border border-outline-variant" data-metric-toggle>
+          <button
+            type="button"
+            data-metric="total"
+            class="px-4 py-1.5 rounded-full bg-primary text-on-primary font-mono text-xs font-bold transition-colors"
+          >
+            Cumulative Total
+          </button>
+          <button
+            type="button"
+            data-metric="average"
+            class="px-4 py-1.5 rounded-full text-on-surface-variant font-mono text-xs font-medium hover:text-on-surface transition-colors"
+          >
+            Avg per Match
+          </button>
+        </div>
+      </div>
+
+      <!-- Cumulative Total List -->
+      <div id="standings-total" class="grid grid-cols-1 gap-4 block">
         {
-          leaderboard.tabs.map((tab, i) => (
-            <button
-              type="button"
-              data-tab-index={i}
-              class={
-                i === 0
-                  ? 'px-6 py-2 rounded-full bg-white shadow-sm font-headline font-bold text-sm'
-                  : 'px-6 py-2 rounded-full text-on-surface-variant font-headline font-medium text-sm hover:text-on-surface'
-              }
-            >
-              {tab}
-            </button>
-          ))
+          totalStandings.map((entry, i) => {
+            const isFirst = i === 0;
+            const bIdx = i < 3 ? i : 3;
+            const rank = i + 1;
+            return isFirst ? (
+              <div class="glass-card p-8 rounded-xl flex flex-col md:flex-row items-center gap-8 border-2 border-yellow-400 shadow-[0_0_30px_rgba(250,204,21,0.15)] relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-4">
+                  <span class="material-symbols-outlined text-yellow-400 text-4xl" style="font-variation-settings: 'FILL' 1;">
+                    workspace_premium
+                  </span>
+                </div>
+                <div class="text-6xl font-mono font-bold text-yellow-400 opacity-50">0{rank}</div>
+                <div class="w-20 h-20 rounded-full bg-surface-container-high border-2 border-white overflow-hidden flex items-center justify-center text-2xl font-bold text-on-surface-variant font-mono">
+                  {getInitials(entry.name)}
+                </div>
+                <div class="flex-1 text-center md:text-left">
+                  <h4 class="text-2xl font-headline font-extrabold">{entry.name}</h4>
+                  <p class="text-primary font-mono text-sm">{entry.project}</p>
+                </div>
+                <div class="text-center md:text-right">
+                  <div class="text-xs font-mono uppercase text-on-surface-variant mb-1">Total Vibe Points</div>
+                  <div class="text-4xl font-headline font-extrabold text-primary">
+                    {entry.totalPoints.toLocaleString()}
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div class={`glass-card p-6 rounded-xl flex flex-col md:flex-row items-center gap-6 border-l-8 ${medalBorder[bIdx]}`}>
+                <div class={`text-4xl font-mono font-bold ${medalText[bIdx]}`}>{rank < 10 ? `0${rank}` : rank}</div>
+                <div class="w-16 h-16 rounded-full bg-surface-container-high overflow-hidden flex items-center justify-center text-xl font-bold text-on-surface-variant font-mono">
+                  {getInitials(entry.name)}
+                </div>
+                <div class="flex-1 text-center md:text-left">
+                  <h4 class="text-xl font-headline font-bold">{entry.name}</h4>
+                  <p class="text-on-surface-variant font-mono text-xs">{entry.project}</p>
+                </div>
+                <div class="text-center md:text-right">
+                  <div class="text-[10px] font-mono uppercase text-on-surface-variant">Total Points</div>
+                  <div class="text-2xl font-headline font-extrabold">
+                    {entry.totalPoints.toLocaleString()}
+                  </div>
+                </div>
+              </div>
+            );
+          })
+        }
+      </div>
+
+      <!-- Average Performance List -->
+      <div id="standings-average" class="grid grid-cols-1 gap-4 hidden">
+        {
+          averageStandings.map((entry, i) => {
+            const isFirst = i === 0;
+            const bIdx = i < 3 ? i : 3;
+            const rank = i + 1;
+            return isFirst ? (
+              <div class="glass-card p-8 rounded-xl flex flex-col md:flex-row items-center gap-8 border-2 border-yellow-400 shadow-[0_0_30px_rgba(250,204,21,0.15)] relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-4">
+                  <span class="material-symbols-outlined text-yellow-400 text-4xl" style="font-variation-settings: 'FILL' 1;">
+                    workspace_premium
+                  </span>
+                </div>
+                <div class="text-6xl font-mono font-bold text-yellow-400 opacity-50">0{rank}</div>
+                <div class="w-20 h-20 rounded-full bg-surface-container-high border-2 border-white overflow-hidden flex items-center justify-center text-2xl font-bold text-on-surface-variant font-mono">
+                  {getInitials(entry.name)}
+                </div>
+                <div class="flex-1 text-center md:text-left">
+                  <h4 class="text-2xl font-headline font-extrabold">{entry.name}</h4>
+                  <p class="text-primary font-mono text-sm">{entry.project}</p>
+                </div>
+                <div class="text-center md:text-right">
+                  <div class="text-xs font-mono uppercase text-on-surface-variant mb-1">Avg Vibe Points</div>
+                  <div class="text-4xl font-headline font-extrabold text-primary">
+                    {entry.averagePoints.toLocaleString()}
+                  </div>
+                  <div class="text-[10px] font-mono text-on-surface-variant mt-1">({entry.matchesAttended} matches)</div>
+                </div>
+              </div>
+            ) : (
+              <div class={`glass-card p-6 rounded-xl flex flex-col md:flex-row items-center gap-6 border-l-8 ${medalBorder[bIdx]}`}>
+                <div class={`text-4xl font-mono font-bold ${medalText[bIdx]}`}>{rank < 10 ? `0${rank}` : rank}</div>
+                <div class="w-16 h-16 rounded-full bg-surface-container-high overflow-hidden flex items-center justify-center text-xl font-bold text-on-surface-variant font-mono">
+                  {getInitials(entry.name)}
+                </div>
+                <div class="flex-1 text-center md:text-left">
+                  <h4 class="text-xl font-headline font-bold">{entry.name}</h4>
+                  <p class="text-on-surface-variant font-mono text-xs">{entry.project}</p>
+                </div>
+                <div class="text-center md:text-right">
+                  <div class="text-[10px] font-mono uppercase text-on-surface-variant">Avg Points</div>
+                  <div class="text-2xl font-headline font-extrabold">
+                    {entry.averagePoints.toLocaleString()}
+                  </div>
+                  <div class="text-[9px] font-mono text-on-surface-variant mt-0.5">({entry.matchesAttended} matches)</div>
+                </div>
+              </div>
+            );
+          })
         }
       </div>
     </div>
-    <div class="grid grid-cols-1 gap-4">
-      {
-        leaderboard.entries.map((entry, i) => {
-          const isFirst = i === 0;
-          return isFirst ? (
-            <div class="glass-card p-8 rounded-xl flex flex-col md:flex-row items-center gap-8 border-2 border-yellow-400 shadow-[0_0_30px_rgba(250,204,21,0.15)] relative overflow-hidden">
-              <div class="absolute top-0 right-0 p-4">
-                <span class="material-symbols-outlined text-yellow-400 text-4xl" style="font-variation-settings: 'FILL' 1;">
-                  workspace_premium
+
+    <!-- TAB 1: MATCH-BY-MATCH WINNERS -->
+    <div data-tab-content="1" class="hidden">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {matchWinners.map((winnerInfo) => {
+          if (!winnerInfo.winner) return null;
+          return (
+            <div class="glass-card p-6 rounded-xl flex flex-col gap-4 border border-outline-variant relative overflow-hidden group hover:border-primary transition-colors">
+              <div class="absolute top-0 right-0 p-3 opacity-20 group-hover:opacity-100 transition-opacity">
+                <span class="material-symbols-outlined text-primary text-4xl" style="font-variation-settings: 'FILL' 1;">
+                  trophy
                 </span>
               </div>
-              <div class="text-6xl font-mono font-bold text-yellow-400 opacity-50">0{entry.rank}</div>
-              <div class="w-20 h-20 rounded-full bg-surface-container-high border-2 border-white overflow-hidden">
-                <img src={entry.avatar} alt={entry.avatarAlt} class="w-full h-full object-cover" />
+              <div>
+                <div class="text-xs font-mono text-primary font-bold mb-1">{winnerInfo.date}</div>
+                <div class="text-sm font-headline text-on-surface-variant">{winnerInfo.match}</div>
               </div>
-              <div class="flex-1 text-center md:text-left">
-                <h4 class="text-2xl font-headline font-extrabold">{entry.name}</h4>
-                <p class="text-primary font-mono text-sm">{entry.project}</p>
-              </div>
-              <div class="text-center md:text-right">
-                <div class="text-xs font-mono uppercase text-on-surface-variant mb-1">Total Vibe Points</div>
-                <div class="text-4xl font-headline font-extrabold text-primary">
-                  {entry.vibePoints.toLocaleString()}
+              <div class="mt-4 flex items-center justify-between">
+                <div>
+                  <h4 class="text-xl font-headline font-bold">{winnerInfo.winner.name}</h4>
+                  <p class="text-on-surface-variant font-mono text-xs">{winnerInfo.winner.project}</p>
                 </div>
-              </div>
-            </div>
-          ) : (
-            <div class={`glass-card p-6 rounded-xl flex flex-col md:flex-row items-center gap-6 border-l-8 ${medalBorder[i]}`}>
-              <div class={`text-4xl font-mono font-bold ${medalText[i]}`}>0{entry.rank}</div>
-              <div class="w-16 h-16 rounded-full bg-surface-container-high overflow-hidden">
-                <img src={entry.avatar} alt={entry.avatarAlt} class="w-full h-full object-cover" />
-              </div>
-              <div class="flex-1 text-center md:text-left">
-                <h4 class="text-xl font-headline font-bold">{entry.name}</h4>
-                <p class="text-on-surface-variant font-mono text-xs">{entry.project}</p>
-              </div>
-              <div class="text-center md:text-right">
-                <div class="text-[10px] font-mono uppercase text-on-surface-variant">Vibe Points</div>
-                <div class="text-2xl font-headline font-extrabold">
-                  {entry.vibePoints.toLocaleString()}
+                <div class="text-right">
+                  <div class="text-2xl font-headline font-extrabold text-primary">
+                    {winnerInfo.winner.points}
+                  </div>
+                  <div class="text-[10px] font-mono uppercase text-on-surface-variant">pts</div>
                 </div>
               </div>
             </div>
           );
-        })
-      }
+        })}
+      </div>
     </div>
   </div>
 </section>
 
 <script>
-  // Simple visual toggle for leaderboard tabs (data is the same for both tabs in this demo).
-  const container = document.querySelector('[data-leaderboard-tabs]');
-  if (container) {
-    const buttons = container.querySelectorAll('button');
+  // Top-Level Tab Toggle Logic
+  const tabContainer = document.querySelector('[data-leaderboard-tabs]');
+  if (tabContainer) {
+    const buttons = tabContainer.querySelectorAll('button');
+    const contents = document.querySelectorAll('[data-tab-content]');
+    
     buttons.forEach((btn) => {
       btn.addEventListener('click', () => {
+        // Reset button styling
         buttons.forEach((b) => {
-          b.className =
-            'px-6 py-2 rounded-full text-on-surface-variant font-headline font-medium text-sm hover:text-on-surface';
+          b.className = 'px-6 py-2 rounded-full text-on-surface-variant font-headline font-medium text-sm hover:text-on-surface';
         });
-        btn.className =
-          'px-6 py-2 rounded-full bg-white shadow-sm font-headline font-bold text-sm';
+        // Activate clicked button
+        btn.className = 'px-6 py-2 rounded-full bg-white shadow-sm font-headline font-bold text-sm';
+        
+        // Show/hide content
+        const index = btn.getAttribute('data-tab-index');
+        contents.forEach((content) => {
+          if (content.getAttribute('data-tab-content') === index) {
+            content.classList.remove('hidden');
+            content.classList.add('block');
+          } else {
+            content.classList.remove('block');
+            content.classList.add('hidden');
+          }
+        });
+      });
+    });
+  }
+
+  // Sub-Toggle Logic: Cumulative vs Average
+  const metricContainer = document.querySelector('[data-metric-toggle]');
+  if (metricContainer) {
+    const metricBtns = metricContainer.querySelectorAll('button');
+    const standingsTotal = document.getElementById('standings-total');
+    const standingsAverage = document.getElementById('standings-average');
+    
+    metricBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        // Reset button styling
+        metricBtns.forEach((b) => {
+          b.className = 'px-4 py-1.5 rounded-full text-on-surface-variant font-mono text-xs font-medium hover:text-on-surface transition-colors';
+        });
+        // Activate clicked button
+        btn.className = 'px-4 py-1.5 rounded-full bg-primary text-on-primary font-mono text-xs font-bold transition-colors';
+        
+        // Show/hide lists
+        const metric = btn.getAttribute('data-metric');
+        if (metric === 'average') {
+          if (standingsTotal) standingsTotal.className = 'grid grid-cols-1 gap-4 hidden';
+          if (standingsAverage) standingsAverage.className = 'grid grid-cols-1 gap-4 block';
+        } else {
+          if (standingsTotal) standingsTotal.className = 'grid grid-cols-1 gap-4 block';
+          if (standingsAverage) standingsAverage.className = 'grid grid-cols-1 gap-4 hidden';
+        }
       });
     });
   }

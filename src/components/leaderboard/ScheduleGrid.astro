@@ -68,14 +68,16 @@ import { fullSchedule } from '@config/leaderboard/schedule';
               </div>
             </div>
             <div class="border-t border-outline-variant/10 pt-4 mt-4">
-              <div class="flex items-center gap-2 text-xs text-on-surface-variant mb-4 flex-wrap">
-                <span class="material-symbols-outlined text-[16px]">schedule</span>
-                <span class="font-mono">{match.time}</span>
-                <span class="mx-1">•</span>
-                <span class="material-symbols-outlined text-[16px]">room</span>
-                <span>{match.location}</span>
+              <div class="flex items-center text-xs text-on-surface-variant mb-4 w-full">
+                <span class="material-symbols-outlined text-[16px] flex-shrink-0 mr-1">schedule</span>
+                <span class="font-mono flex-shrink-0">{match.time}</span>
+                <span class="mx-2 flex-shrink-0">•</span>
+                <span class="material-symbols-outlined text-[16px] flex-shrink-0 mr-1">room</span>
+                <span class="truncate" title={match.location}>{match.location}</span>
               </div>
-              <button class={ctaClasses}><a href="/#liveStandings"></a>{match.cta.label}</button>
+              <a href={match.cta.href || '#liveStandings'} class={`block text-center cursor-pointer ${ctaClasses}`}>
+                {match.cta.label}
+              </a>
             </div>
           </div>
         );
@@ -110,7 +112,8 @@ import { fullSchedule } from '@config/leaderboard/schedule';
       });
     });
 
-    // Show completed matches by default (both events are completed)
-    activate('completed');
+    // Activate the first tab by default
+    const firstTab = buttons[0]?.getAttribute('data-schedule-tab');
+    if (firstTab) activate(firstTab);
   }
 </script>
