@@ -2,30 +2,20 @@
 import BaseLayout from '@components/layout/BaseLayout.astro';
 import MatchHero from '@components/leaderboard/MatchHero.astro';
 import LiveStandings from '@components/leaderboard/LiveStandings.astro';
-// import VenueCard from '@components/leaderboard/VenueCard.astro';
 import ScheduleGrid from '@components/leaderboard/ScheduleGrid.astro';
-// import SeasonStandings from '@components/leaderboard/SeasonStandings.astro';
 ---
 
 <BaseLayout
-  title="Leaderboard & Match Center — Prompt Premier League"
-  activeNav="Leaderboard"
+  title="Scoreboard & Match Center — AIPL · GDG Indore"
+  activeNav="Scoreboard"
 >
   <main class="pb-20 space-y-16">
     <MatchHero />
-    <section class="px-6 md:px-8 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8">
-      <div class="lg:col-span-8">
-        <LiveStandings />
-      </div>
-      <!-- <div class="lg:col-span-4">
-        <VenueCard />
-      </div> -->
+    <section class="px-6 md:px-8 max-w-5xl mx-auto">
+      <LiveStandings />
     </section>
     <div class="px-6 md:px-8 max-w-7xl mx-auto">
       <ScheduleGrid />
     </div>
-    <!-- <div class="px-6 md:px-8 max-w-7xl mx-auto">
-      <SeasonStandings />
-    </div> -->
   </main>
 </BaseLayout>
