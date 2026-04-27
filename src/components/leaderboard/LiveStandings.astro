@@ -1,60 +1,129 @@
 ---
-import { liveStandings } from '@config/leaderboard/liveStandings';
+import { aiplEvents } from '@config/leaderboard/events';
+
+// Pre-sort each event's entries for guaranteed rank order
+// (entries in events.ts are already sorted by points desc)
 ---
 
-<div class="bg-surface-container-lowest rounded-xl p-6 md:p-8 shadow-[0_20px_40px_rgba(44,47,49,0.06)] glass-shimmer" id="liveStandings" style="height: 80vh;overflow: auto;">
+<div
+  class="bg-surface-container-lowest rounded-xl p-6 md:p-8 shadow-[0_20px_40px_rgba(44,47,49,0.06)] glass-shimmer"
+  id="liveStandings"
+>
+  <!-- Header row: title + event dropdown -->
   <div class="flex items-center justify-between mb-8 gap-4 flex-wrap">
     <div class="flex items-center gap-3">
       <span class="flex h-3 w-3 relative">
         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
         <span class="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
       </span>
-      <h2 class="text-xl md:text-2xl font-bold tracking-tight">{liveStandings.heading}</h2>
+      <h2 class="text-xl md:text-2xl font-bold tracking-tight">Scoreboard</h2>
     </div>
-    <div class="font-mono text-xs bg-surface-container-low px-3 py-1.5 rounded-full text-on-surface-variant">
-      {liveStandings.matchId}
+
+    <!-- Event selector dropdown -->
+    <div class="flex items-center gap-2">
+      <span class="material-symbols-outlined text-on-surface-variant text-[18px]">calendar_month</span>
+      <select
+        id="event-selector"
+        class="font-mono text-xs bg-surface-container-low px-3 py-1.5 rounded-full text-on-surface-variant border border-outline-variant/20 focus:outline-none focus:ring-2 focus:ring-primary/30 cursor-pointer appearance-none pr-6"
+      >
+        {aiplEvents.map((event) => (
+          <option value={event.id}>
+            {event.label} — {event.iplMatch}
+          </option>
+        ))}
+      </select>
     </div>
   </div>
-  <div class="space-y-4">
+
+  <!-- All event rows, tagged with data-event-id; JS handles visibility -->
+  <div class="space-y-3" id="standings-body">
     {
-      liveStandings.teams.map((team) => {
-        const accentBg = team.accent === 'secondary' ? 'bg-secondary/10 text-secondary' : 'bg-tertiary/10 text-tertiary';
-        const scoreClass = team.highlighted ? 'text-primary' : 'text-on-surface';
-        return (
-          <div class="flex items-center justify-between p-4 bg-surface-container-low/50 rounded-xl hover:bg-surface-container-low transition-colors">
-            <div class="flex items-center gap-4">
-              <div class={`w-12 h-12 ${accentBg} rounded-lg flex items-center justify-center font-mono font-bold`}>
-                {team.rank}
-              </div>
-              <div>
-                <div class="font-bold">{team.name}</div>
-                <div class="text-xs text-on-surface-variant font-mono uppercase tracking-wider">{team.description}</div>
-                {/* ✅ Conditional Rendering */}
-              {
-                team.repoLink && (
-                  <div>
-                    <div class="text-xs text-on-surface-variant font-mono uppercase tracking-wider font-bold">
-                      <a href={team.repoLink} target="_blank" rel="noopener noreferrer">
-                        View Repo
-                      </a>
-                    </div>
+      aiplEvents.map((event) =>
+        event.entries.map((team, idx) => {
+          const rank = idx + 1;
+          const accentBg =
+            rank === 1
+              ? 'bg-yellow-100 text-yellow-700 border border-yellow-300'
+              : rank === 2
+              ? 'bg-slate-100 text-slate-500 border border-slate-300'
+              : rank === 3
+              ? 'bg-amber-100 text-amber-700 border border-amber-300'
+              : 'bg-primary/10 text-primary';
+
+          const rowGlow =
+            rank === 1
+              ? 'border border-yellow-300/40 shadow-[0_0_16px_rgba(250,204,21,0.08)]'
+              : '';
+
+          return (
+            <div
+              data-event-id={event.id}
+              class={`standings-row flex items-center justify-between p-4 bg-surface-container-low/50 rounded-xl hover:bg-surface-container-low transition-colors ${rowGlow}`}
+              style="display:none"
+            >
+              <div class="flex items-center gap-4">
+                <!-- Rank badge -->
+                <div
+                  class={`w-11 h-11 ${accentBg} rounded-lg flex items-center justify-center font-mono font-bold text-sm flex-shrink-0`}
+                >
+                  {String(rank).padStart(2, '0')}
+                </div>
+
+                <!-- Name + project + repo -->
+                <div>
+                  <div class="font-bold text-on-surface">{team.name}</div>
+                  <div class="text-xs text-on-surface-variant font-mono uppercase tracking-wider">
+                    {team.project}
                   </div>
-                )
-              }
+                  {team.repoLink && (
+                    <a
+                      href={team.repoLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="inline-flex items-center gap-1 text-[10px] font-mono text-primary hover:underline mt-0.5"
+                    >
+                      <span class="material-symbols-outlined text-[12px]">open_in_new</span>
+                      View Repo
+                    </a>
+                  )}
+                </div>
               </div>
-              {/* <div>
-                <div class="font-bold">Repository link</div>
-                <div class="text-xs text-on-surface-variant font-mono uppercase tracking-wider"><a href={team.repoLink}></a></div>
-              </div> */}
-              
+
+              <!-- Score -->
+              <div class="text-right flex-shrink-0 pl-4">
+                <div
+                  class={`text-2xl font-mono font-bold ${rank === 1 ? 'text-yellow-500' : 'text-on-surface'}`}
+                >
+                  {team.points}
+                </div>
+                <div class="text-[10px] font-mono text-on-surface-variant uppercase tracking-wider">
+                  Vibe Pts
+                </div>
+              </div>
             </div>
-            <div class="text-right">
-              <div class={`text-2xl font-mono font-bold ${scoreClass}`}>{team.vibeIndex}</div>
-              <div class="text-[10px] font-mono text-on-surface-variant">VIBE INDEX</div>
-            </div>
-          </div>
-        );
-      })
+          );
+        })
+      )
     }
   </div>
 </div>
+
+<script>
+  const selector = document.getElementById('event-selector') as HTMLSelectElement | null;
+  const rows = document.querySelectorAll<HTMLElement>('.standings-row');
+
+  function showEvent(eventId: string) {
+    rows.forEach((row) => {
+      row.style.display = row.dataset.eventId === eventId ? '' : 'none';
+    });
+  }
+
+  if (selector) {
+    // Show first event on load
+    showEvent(selector.value);
+
+    selector.addEventListener('change', () => {
+      showEvent(selector.value);
+    });
+  }
+</script>
