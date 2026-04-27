@@ -88,30 +88,29 @@ import { fullSchedule } from '@config/leaderboard/schedule';
   const tabsContainer = document.querySelector('[data-schedule-tabs]');
   const grid = document.querySelector('[data-schedule-grid]');
   if (tabsContainer && grid) {
-    const buttons = tabsContainer.querySelectorAll('button[data-schedule-tab]');
-    const cards = grid.querySelectorAll('[data-match-tab]');
+    const buttons = tabsContainer.querySelectorAll<HTMLButtonElement>('button[data-schedule-tab]');
+    const cards = grid.querySelectorAll<HTMLElement>('[data-match-tab]');
+
     const activate = (value: string) => {
       buttons.forEach((btn) => {
         const isActive = btn.getAttribute('data-schedule-tab') === value;
-      //   btn.className = isActive
-      //     ? 'px-4 py-2 bg-primary text-on-primary rounded-full text-sm font-bold'
-      //     : 'px-4 py-2 bg-surface-container-low hover:bg-surface-container-high text-on-surface rounded-full text-sm font-bold transition-all';
-      // });
-       btn.className = 'px-4 py-2 bg-primary text-on-primary rounded-full text-sm font-bold';
+        btn.className = isActive
+          ? 'px-4 py-2 bg-primary text-on-primary rounded-full text-sm font-bold'
+          : 'px-4 py-2 bg-surface-container-low hover:bg-surface-container-high text-on-surface rounded-full text-sm font-bold transition-all';
       });
       cards.forEach((card) => {
-        // const visible = card.getAttribute('data-match-tab') === value;
-        const visible = card.getAttribute('data-match-tab') === 'completed';
-        (card as HTMLElement).style.display = visible ? '' : 'none';
+        card.style.display = card.getAttribute('data-match-tab') === value ? '' : 'none';
       });
     };
+
     buttons.forEach((btn) => {
       btn.addEventListener('click', () => {
         const value = btn.getAttribute('data-schedule-tab');
         if (value) activate(value);
       });
     });
-    // Apply the default filter on load so completed matches are hidden initially.
-    activate('upcoming');
+
+    // Show completed matches by default (both events are completed)
+    activate('completed');
   }
 </script>
