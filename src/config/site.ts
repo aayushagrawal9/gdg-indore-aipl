@@ -8,7 +8,7 @@ export const site = {
     { label: 'Matches', href: '/' },
     { label: 'Playbook', href: '/#playbook' },
     { label: 'Partners', href: '/#partners' },
-    { label: 'Leaderboard', href: '/leaderboard' },
+    { label: 'Scoreboard', href: '/leaderboard' },
   ],
   //cta: { label: 'RSVP', href: 'https://kutt.gdgindore.in/aipl-register' },
     cta: {
