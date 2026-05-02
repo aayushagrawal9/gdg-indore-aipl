@@ -26,9 +26,8 @@ export const fullSchedule = {
       teamB: { initials: 'DC', name: 'Delhi Capitals' },
       time: '18:00 GMT+5:30',
       location: "Murphy's Cafe & Fine Dine, Indore",
-      cta: { label: 'Register for Watch Party', variant: 'solid', href: 'https://aipl.gdgindore.in/register/' },
-      tab: 'upcoming',
-      highlighted: true,
+      cta: { label: 'View Results', variant: 'solid', href: '#liveStandings' },
+      tab: 'completed',
     },
     {
       matchLabel: 'AIPL Event 2 • LSG vs RR',

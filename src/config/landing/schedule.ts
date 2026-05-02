@@ -15,9 +15,9 @@ export const schedule = {
     {
       teams: 'RR vs DC',
       date: '1st May 2026',
-      status: 'upcoming',
-      ctaLabel: 'Register for Watch Party',
-      ctaHref: 'https://aipl.gdgindore.in/register/'
+      status: 'completed',
+      ctaLabel: 'View Results',
+      ctaHref: '/leaderboard'
     },
     {
       teams: 'LSG vs RR',
