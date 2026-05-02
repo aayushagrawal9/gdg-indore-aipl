@@ -26,7 +26,7 @@ export const partners = {
   ] satisfies Partner[],
   venue: {
     eyebrow: 'Venue Partner',
-    name: 'Hopin Patio Cafe, Indore',
+    name: "Murphy's Cafe & Fine Dine, Indore",
     icon: 'location_on',
   },
 };

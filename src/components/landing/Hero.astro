@@ -28,10 +28,18 @@ const { badge, title, tagline, taglineTwo, primaryCta, secondaryCta, image, badg
           {primaryCta.label}
         </a>
       )}
+      <a
+        href="https://gdg.community.dev/gdg-indore"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="glass-card bg-primary/5 px-8 py-4 rounded-full font-headline font-bold text-lg hover:bg-primary/10 transition-colors"
+      >
+        Join Our Community
+      </a>
       {site.features?.leaderboard && (
         <a
           href={secondaryCta.href}
-          class="glass-card px-8 py-4 rounded-full font-headline font-bold text-lg hover:bg-surface-container-low transition-colors"
+          class="glass-card bg-primary/5 px-8 py-4 rounded-full font-headline font-bold text-lg hover:bg-primary/10 transition-colors"
         >
           {secondaryCta.label}
         </a>

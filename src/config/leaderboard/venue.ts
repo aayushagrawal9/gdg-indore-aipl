@@ -1,7 +1,7 @@
 export const venue = {
   image: '/images/venue-indore.jpg',
   imageAlt: 'Modern glass convention center in Indore, bright daylight',
-  label: 'Hopin Patio Cafe, Indore',
+  label: "Murphy's Cafe & Fine Dine, Indore",
   eyebrow: 'Grand Finale Venue',
   description:
     '',

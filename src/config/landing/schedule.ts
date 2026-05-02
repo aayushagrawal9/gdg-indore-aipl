@@ -23,15 +23,15 @@ export const schedule = {
       teams: 'LSG vs RR',
       date: '22nd April 2026',
       status: 'completed',
-      ctaLabel: 'Register for Watch Party',
-      ctaHref: '/register'
+      ctaLabel: 'View Results',
+      ctaHref: '/leaderboard'
     },
     {
       teams: 'LSG vs GT',
       date: '12th April 2026',
       status: 'completed',
-      ctaLabel: 'Register for Watch Party',
-      ctaHref: '/register'
+      ctaLabel: 'View Results',
+      ctaHref: '/leaderboard'
     },
     {
       teams: 'KRIYETA 5.0 36hrs Women lead National level hackathon',

@@ -21,11 +21,12 @@ export const site = {
     watchParty: true,
   },
   footer: {
-    tagline: 'Coded with 🏏 and AI by GDG Indore.',
+    tagline: '',
     links: [
-      { label: 'Discord', href: '#' },
-      { label: 'Slack', href: '#' },
-      { label: 'Rules', href: '#' },
+      { label: 'GDG Cloud Indore', href: 'https://gdg.community.dev/gdg-cloud-indore' },
+      { label: 'ML Indore', href: 'https://www.commudle.com/communities/machine-learning-indore' },
+      { label: 'Join our Google for Developers Channel', href: 'https://whatsapp.com/channel/0029VaCGpToFXUuYZPFHMi1d' },
+      { label: 'Oasis Club', href: 'https://www.instagram.com/oasis._.club/' },
     ],
   },
 };
