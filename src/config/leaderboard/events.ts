@@ -92,6 +92,25 @@ export const aiplEvents: AIPLEvent[] = [
       { name: 'Devansh Kumar Patidar',project: 'Cricket Tactics',          repoLink: 'https://github.com/DKP-RGB/cricket-tactics',            points: 9  },
     ],
   },
+  {
+    id: 'may01',
+    label: 'May 1, 2026',
+    iplMatch: 'RR vs DC',
+    date: '2026-05-01',
+    entries: [
+      { name: 'Deepanshu Sagore',    project: 'IPL Co-Host AI',            repoLink: 'https://github.com/DeepanshuSagore/ipl-cohost',         points: 24 },
+      { name: 'Devesh Talreja',      project: 'PitchSense-AI',             repoLink: 'https://github.com/devesh-talreja/PitchSense-AI',       points: 23 },
+      { name: 'Ganne ka juice',      project: 'APL Insight Hub',           repoLink: 'https://github.com/AvneetSingh11/APL-Insight-Hub',      points: 23 },
+      { name: 'Munish Jain',         project: 'Cricpulse AI',              repoLink: 'https://github.com/munishhhh/CricpluseAI',              points: 23 },
+      { name: 'CoreCode',            project: '',                          repoLink: '',                                                       points: 22 },
+      { name: 'Pushpraj Singhal',    project: 'Pitch battel ai',           repoLink: 'https://github.com/pushprajsinghal/pitchbattle-ai',     points: 21 },
+      { name: 'Pragyan',             project: 'CricPulse',                 repoLink: 'https://github.com/CodeWithBishal/apl',                 points: 21 },
+      { name: 'Mukul',               project: 'APL Insights Dashboard',    repoLink: 'https://codepen.io/Mukul-Gosiya/pen/PwbwOaa',           points: 21 },
+      { name: 'Ayush Shinde',        project: 'APL Sentinel',              repoLink: 'https://github.com/theayushshinde/apl-sentinel',        points: 21 },
+      { name: 'Build Algos',         project: 'Cricket chat bot',          repoLink: 'https://github.com/ankitpanchaal/gdg_build_with_AI',    points: 20 },
+      { name: 'Jatin',               project: '',                          repoLink: '',                                                       points: 20 },
+    ],
+  },
 ];
 
 // ── UTILITY: Compute cumulative standings across all events ─
