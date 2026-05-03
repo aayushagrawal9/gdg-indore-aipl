@@ -20,6 +20,17 @@ export const fullSchedule = {
   ],
   matches: [
     {
+      matchLabel: 'AIPL Event 4 • LSG vs RCB',
+      statusLabel: '7 May',
+      teamA: { initials: 'LSG', name: 'Lucknow Super Giants' },
+      teamB: { initials: 'RCB', name: 'Royal Challengers Bengaluru' },
+      time: '18:00 GMT+5:30',
+      location: "Murphy's Cafe & Fine Dine, Indore",
+      cta: { label: 'Register for Watch Party', variant: 'solid', href: 'https://aipl.gdgindore.in/register/' },
+      tab: 'upcoming',
+      highlighted: true,
+    },
+    {
       matchLabel: 'AIPL Event 3 • RR vs DC',
       statusLabel: '1 May',
       teamA: { initials: 'RR', name: 'Rajasthan Royals' },
