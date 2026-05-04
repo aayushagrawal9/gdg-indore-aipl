@@ -20,18 +20,20 @@ import { aiplEvents } from '@config/leaderboard/events';
     </div>
 
     <!-- Event selector dropdown -->
-    <div class="flex items-center gap-2">
-      <span class="material-symbols-outlined text-on-surface-variant text-[18px]">calendar_month</span>
-      <select
-        id="event-selector"
-        class="font-mono text-xs bg-surface-container-low px-3 py-1.5 rounded-full text-on-surface-variant border border-outline-variant/20 focus:outline-none focus:ring-2 focus:ring-primary/30 cursor-pointer appearance-none pr-6"
-      >
-        {aiplEvents.map((event) => (
-          <option value={event.id}>
-            {event.label} — {event.iplMatch}
-          </option>
-        ))}
-      </select>
+    <div class="flex flex-col items-end">
+      <label for="event-selector" class="cursor-pointer text-[9px] font-mono uppercase tracking-widest text-on-surface-variant mb-1 pr-3 hover:text-primary transition-colors">Select Event</label>
+      <div class="relative flex items-center group">
+        <span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-[18px] pointer-events-none group-hover:text-primary transition-colors">calendar_month</span>
+        <select
+          id="event-selector"
+          class="font-mono text-xs bg-surface-container-low pl-10 pr-9 py-1.5 rounded-full text-on-surface-variant border border-outline-variant/20 focus:outline-none focus:ring-2 focus:ring-primary/30 cursor-pointer appearance-none group-hover:border-primary/40 transition-colors"
+        >
+          {[...aiplEvents].reverse().map((event) => (
+            <option value={event.id}>{event.label} — {event.iplMatch}</option>
+          ))}
+        </select>
+        <span class="material-symbols-outlined absolute right-2.5 text-on-surface-variant text-[20px] pointer-events-none group-hover:text-primary transition-colors">arrow_drop_down</span>
+      </div>
     </div>
   </div>
 
