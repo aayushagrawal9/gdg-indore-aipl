@@ -1,0 +1,67 @@
+---
+import BaseLayout from '@components/layout/BaseLayout.astro';
+import { aiplEvents } from '@config/leaderboard/events';
+---
+
+<BaseLayout
+  title="Event Gallery — AIPL · GDG Indore"
+  activeNav="Gallery"
+>
+  <main class="flex-grow px-6 md:px-12 max-w-7xl mx-auto w-full relative z-10" style="padding-top: 130px; padding-bottom: 50px;">
+    
+    <div class="mb-12 md:mb-14 mt-8 md:mt-12">
+      <h1 class="font-headline text-5xl md:text-7xl font-bold tracking-tight text-on-surface mb-6">
+        Event Gallery
+      </h1>
+      <p class="text-on-surface-variant text-lg md:text-xl max-w-2xl font-mono leading-relaxed opacity-90">
+        Relive the moments from the Agentic Premier League watch parties. Where code meets cricket.
+      </p>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-start">
+      {
+        [...aiplEvents].reverse().map((event, index) => {
+          const imageMap = {
+            'apr12': 'event1.jpeg',
+            'apr22': 'event2.jpeg',
+            'may01': 'event3.jpeg',
+            'may07': 'event4.jpeg'
+          };
+          const imageName = imageMap[event.id] || `${event.id}.jpg`;
+          
+          return (
+            <div class="group flex flex-col bg-surface-container-low rounded-[2rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-outline-variant/10 hover:border-primary/30">
+              
+              <!-- Image Container - Natural Dimensions -->
+              <div class="relative w-full overflow-hidden bg-surface-container-highest">
+                <img 
+                  src={`/images/gallery/${imageName}`} 
+                  alt={`AIPL Event ${event.label}`}
+                  class="w-full h-auto object-contain transform transition-transform duration-700 group-hover:scale-105"
+                  onerror="this.onerror=null;this.src='/images/stadium-hero.jpg';"
+                />
+              </div>
+
+              <!-- Card Details - Balanced Uniform Height -->
+              <div class="p-8 md:p-10 bg-surface-container-low flex flex-col justify-center items-start border-t border-outline-variant/5 min-h-[110px]">
+                
+                <!-- Match Name as Rounded Pill -->
+                <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-primary/10 text-primary font-mono text-[10.5px] md:text-[11px] uppercase tracking-widest font-bold mb-3 border border-primary/20 transition-all group-hover:bg-primary group-hover:text-surface">
+                  🏏 {event.iplMatch}
+                </div>
+                
+                <!-- Date -->
+                <h3 class="font-headline text-xl md:text-2xl font-bold text-on-surface group-hover:text-primary transition-colors duration-300">
+                  {event.label}
+                </h3>
+
+              </div>
+
+            </div>
+          );
+        })
+      }
+    </div>
+  </main>
+</BaseLayout>

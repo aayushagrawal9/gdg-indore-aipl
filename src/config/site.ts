@@ -9,6 +9,7 @@ export const site = {
     { label: 'Playbook', href: '/#playbook' },
     { label: 'Partners', href: '/#partners' },
     { label: 'Scoreboard', href: '/leaderboard' },
+    { label: 'Gallery', href: '/gallery' },
   ],
   //cta: { label: 'RSVP', href: 'https://kutt.gdgindore.in/aipl-register' },
     cta: {
