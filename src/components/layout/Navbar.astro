@@ -6,6 +6,13 @@ interface Props {
 }
 
 const { active = 'Matches' } = Astro.props;
+
+const navLinks = site.nav.filter((item) => {
+  if (item.label === 'Scoreboard' && !site.features?.leaderboard) {
+    return false;
+  }
+  return true;
+});
 ---
 
 <nav
@@ -17,14 +24,7 @@ const { active = 'Matches' } = Astro.props;
     </a>
     <div class="hidden md:flex items-center gap-8 font-headline font-medium text-sm tracking-tight" data-nav-links>
       {
-        site.nav
-          .filter((item) => {
-            if (item.label === 'Scoreboard' && !site.features?.leaderboard) {
-              return false;
-            }
-            return true;
-          })
-          .map((item) => {
+        navLinks.map((item) => {
           const isActive = item.label === active;
           return (
             <a
@@ -50,13 +50,79 @@ const { active = 'Matches' } = Astro.props;
       >
         {site.cta.label}
       </a>
+      <!-- Mobile Menu Button -->
+      <button
+        id="mobile-menu-btn"
+        class="md:hidden flex items-center justify-center p-2 text-on-surface/80 hover:text-primary transition-colors focus:outline-none rounded-full bg-surface-container-low border border-outline-variant/20 ml-2"
+        aria-label="Toggle Menu"
+      >
+        <span class="material-symbols-outlined text-[24px]" id="menu-icon">menu</span>
+      </button>
     </div>
+  </div>
+
+  <!-- Mobile Menu Dropdown -->
+  <div 
+    id="mobile-menu" 
+    class="absolute top-[100%] left-0 w-full bg-background/95 backdrop-blur-xl border-b border-outline-variant/15 flex flex-col items-center py-8 gap-6 font-headline font-medium text-base tracking-tight transition-all duration-300 transform -translate-y-4 opacity-0 pointer-events-none md:hidden z-40"
+  >
+    {
+      navLinks.map((item) => {
+        const isActive = item.label === active;
+        return (
+          <a
+            href={item.href}
+            data-mobile-nav-label={item.label}
+            class={
+              isActive
+                ? 'text-primary border-b-2 border-primary-fixed pb-1 px-4'
+                : 'text-on-surface/70 hover:text-primary transition-colors px-4'
+            }
+          >
+            {item.label}
+          </a>
+        );
+      })
+    }
   </div>
 </nav>
 
 <script>
   const ACTIVE = 'text-primary border-b-2 border-primary-fixed pb-1';
   const INACTIVE = 'text-on-surface/60 hover:text-primary transition-colors';
+
+  // Mobile Menu Logic
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  
+  if (mobileMenuBtn && mobileMenu && menuIcon) {
+    let isOpen = false;
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      isOpen = !isOpen;
+      if (isOpen) {
+        mobileMenu.classList.remove('-translate-y-4', 'opacity-0', 'pointer-events-none');
+        mobileMenu.classList.add('translate-y-0', 'opacity-100', 'pointer-events-auto');
+        menuIcon.textContent = 'close';
+      } else {
+        mobileMenu.classList.add('-translate-y-4', 'opacity-0', 'pointer-events-none');
+        mobileMenu.classList.remove('translate-y-0', 'opacity-100', 'pointer-events-auto');
+        menuIcon.textContent = 'menu';
+      }
+    });
+
+    // Close menu when a link is clicked
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        isOpen = false;
+        mobileMenu.classList.add('-translate-y-4', 'opacity-0', 'pointer-events-none');
+        mobileMenu.classList.remove('translate-y-0', 'opacity-100', 'pointer-events-auto');
+        menuIcon.textContent = 'menu';
+      });
+    });
+  }
 
   // Only run scroll-spy on the landing page (where sections exist)
   const sections = document.querySelectorAll<HTMLElement>('#playbook, #partners');
