@@ -18,7 +18,7 @@ export default {
         tertiary: colors.tertiary,
         surface: colors.surface,
         background: colors.surface,
-        'surface-container-lowest': '#ffffff',
+  'surface-container-lowest': colors.surfaceLowest,
         'surface-container-low': colors.surfaceLow,
         'surface-container': colors.surfaceContainer,
         'surface-container-high': colors.surfaceContainerHigh,

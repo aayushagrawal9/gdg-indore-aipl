@@ -18,7 +18,7 @@ import { partners } from '@config/landing/partners';
           <div
             class={`${i === 0 ? 'col-span-2 row-span-2 p-12' : 'col-span-2 md:col-span-2 p-8'} glass-card rounded-xl flex flex-col justify-center items-center text-center ${i === 0 ? 'kinetic-shimmer' : ''}`}
           >
-            <img src={community.logo} alt={community.name} class={i === 0 ? 'h-10 mb-4' : 'h-8 mb-3'} />
+            <img src={community.logo} alt={community.name} class={i === 0 ? 'h-10 mb-4 dark:invert dark:hue-rotate-180 dark:brightness-150' : 'h-8 mb-3 dark:invert dark:hue-rotate-180 dark:brightness-150'} />
             <p class="text-on-surface-variant mt-2 font-medium">{community.description}</p>
           </div>
         ))

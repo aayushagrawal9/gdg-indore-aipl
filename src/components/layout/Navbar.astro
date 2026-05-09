@@ -20,7 +20,7 @@ const navLinks = site.nav.filter((item) => {
 >
   <div class="flex justify-between items-center px-6 md:px-8 py-4 max-w-7xl mx-auto">
     <a href="/" class="flex items-center gap-2">
-      <img src="/images/gdg-logo-new.svg" alt="GDG Indore" class="h-20"/>
+      <img src="/images/gdg-logo-new.svg" alt="GDG Indore" class="h-20 dark:invert dark:hue-rotate-180 dark:brightness-200"/>
     </a>
     <div class="hidden md:flex items-center gap-8 font-headline font-medium text-sm tracking-tight" data-nav-links>
       {
@@ -43,6 +43,19 @@ const navLinks = site.nav.filter((item) => {
       }
       </div>
     <div class="flex items-center gap-4">
+      <!-- Stadium Light Theme Toggle -->
+      <button 
+        id="theme-toggle" 
+        class="relative group flex items-center justify-center p-2 rounded-full bg-surface-container-low border border-outline-variant/20 text-on-surface/80 hover:text-primary hover:border-primary/50 transition-all duration-300 focus:outline-none"
+        aria-label="Toggle Dark Mode"
+      >
+        <!-- Flickering/Glow Effect for Stadium Vibe -->
+        <div class="absolute inset-0 bg-primary/20 blur-md rounded-full opacity-0 dark:opacity-40 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <span class="material-symbols-outlined relative z-10 transition-transform duration-500 transform group-hover:scale-110" id="theme-icon">
+          tungsten
+        </span>
+      </button>
+
       <!-- RSVP Button -->
       <a
         href={site.cta.href}
@@ -155,5 +168,44 @@ const navLinks = site.nav.filter((item) => {
     );
 
     sections.forEach((s) => observer.observe(s));
+  }
+
+  // Stadium Light Theme Toggle Logic
+  const themeToggleBtn = document.getElementById('theme-toggle');
+  const themeIcon = document.getElementById('theme-icon');
+
+  if (themeToggleBtn && themeIcon) {
+    // Set initial icon based on HTML class (set by BaseLayout script)
+    const isDark = document.documentElement.classList.contains('dark');
+    themeIcon.textContent = isDark ? 'highlight' : 'tungsten';
+
+    themeToggleBtn.addEventListener('click', () => {
+      const isCurrentlyDark = document.documentElement.classList.contains('dark');
+      
+      // Flicker animation effect
+      themeToggleBtn.classList.add('animate-pulse');
+      setTimeout(() => themeToggleBtn.classList.remove('animate-pulse'), 500);
+
+      if (isCurrentlyDark) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+        themeIcon.textContent = 'tungsten';
+        themeIcon.style.transform = 'rotate(-180deg)';
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+        themeIcon.textContent = 'highlight';
+        themeIcon.style.transform = 'rotate(180deg)';
+      }
+      
+      // Reset rotation after transition
+      setTimeout(() => {
+        themeIcon.style.transition = 'none';
+        themeIcon.style.transform = 'none';
+        // force reflow
+        void themeIcon.offsetWidth;
+        themeIcon.style.transition = 'transform 0.5s';
+      }, 500);
+    });
   }
 </script>

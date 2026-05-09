@@ -51,7 +51,7 @@ function getInitials(name: string) {
         <button
           type="button"
           data-tab-index="0"
-          class="px-6 py-2 rounded-full bg-white shadow-sm font-headline font-bold text-sm"
+          class="px-6 py-2 rounded-full bg-surface-container-lowest text-primary dark:border dark:border-primary/30 dark:shadow-[0_0_15px_rgba(47,248,1,0.1)] shadow-sm font-headline font-bold text-sm transition-all"
         >
           Overall Event Series
         </button>
@@ -242,7 +242,7 @@ function getInitials(name: string) {
           b.className = 'px-6 py-2 rounded-full text-on-surface-variant font-headline font-medium text-sm hover:text-on-surface';
         });
         // Activate clicked button
-        btn.className = 'px-6 py-2 rounded-full bg-white shadow-sm font-headline font-bold text-sm';
+        btn.className = 'px-6 py-2 rounded-full bg-surface-container-lowest text-primary dark:border dark:border-primary/30 dark:shadow-[0_0_15px_rgba(47,248,1,0.1)] shadow-sm font-headline font-bold text-sm transition-all';
         
         // Show/hide content
         const index = btn.getAttribute('data-tab-index');

@@ -3,17 +3,67 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --color-primary: 111 100% 21%;
+    --color-primary-dim: 111 100% 18%;
+    --color-primary-fixed: 109 99% 49%;
+    --color-on-primary: 103 100% 88%;
+    --color-on-primary-container: 111 100% 17%;
+    --color-secondary: 212 100% 37%;
+    --color-secondary-container: 222 100% 87%;
+    --color-tertiary: 266 81% 51%;
+    --color-surface: 210 25% 97%;
+    --color-surface-lowest: 0 0% 100%;
+    --color-surface-low: 204 19% 94%;
+    --color-surface-container: 200 15% 91%;
+    --color-surface-container-high: 206 12% 89%;
+    --color-surface-container-highest: 206 9% 86%;
+    --color-on-surface: 204 5% 18%;
+    --color-on-surface-variant: 204 3% 36%;
+    --color-outline-variant: 210 3% 68%;
+    --color-gold: 51 100% 50%;
+    --color-silver: 0 0% 75%;
+    --color-bronze: 30 61% 50%;
+  }
+
+  .dark {
+    --color-primary: 109 99% 49%;
+    --color-primary-dim: 111 100% 21%;
+    --color-primary-fixed: 109 99% 49%;
+    --color-on-primary: 111 100% 10%;
+    --color-on-primary-container: 103 100% 88%;
+    --color-secondary: 212 100% 67%;
+    --color-secondary-container: 212 100% 27%;
+    --color-tertiary: 266 81% 71%;
+    --color-surface: 210 25% 6%;
+    --color-surface-lowest: 210 30% 3%;
+    --color-surface-low: 210 20% 9%;
+    --color-surface-container: 210 15% 12%;
+    --color-surface-container-high: 210 12% 16%;
+    --color-surface-container-highest: 210 9% 20%;
+    --color-on-surface: 210 20% 95%;
+    --color-on-surface-variant: 210 10% 75%;
+    --color-outline-variant: 210 5% 30%;
+  }
+
   body {
-    background-color: #f5f7f9;
-    color: #2c2f31;
+    background-color: hsl(var(--color-surface));
+    color: hsl(var(--color-on-surface));
     font-family: 'Inter', sans-serif;
     -webkit-font-smoothing: antialiased;
+    transition: background-color 0.5s ease, color 0.5s ease, background-image 0.5s ease;
+    background-image: none;
+  }
+
+  .dark body {
+    background-image: radial-gradient(circle at 50% 0%, rgba(47, 248, 1, 0.05) 0%, transparent 40%), radial-gradient(circle at 10% 20%, rgba(0, 88, 188, 0.02) 0%, transparent 30%);
+    background-attachment: fixed;
   }
 }
 
 @layer components {
   .glass-card {
-    background: rgba(255, 255, 255, 0.7);
+    background: hsl(var(--color-surface-lowest) / 0.7);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(171, 173, 175, 0.15);

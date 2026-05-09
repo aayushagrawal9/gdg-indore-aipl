@@ -23,7 +23,7 @@ import { site } from '@config/site';
       schedule.matches.map((match, i) => {
         const isUpcoming = match.status === 'upcoming';
         const statusClasses = isUpcoming
-          ? 'bg-yellow-100 text-yellow-700'
+          ? 'bg-yellow-100 text-yellow-700 dark:bg-yellow-500/20 dark:text-yellow-400'
           : 'bg-primary-fixed/20 text-primary';
         const ctaClasses = isUpcoming
           ? 'bg-primary-fixed text-on-primary-container hover:scale-[1.02]'

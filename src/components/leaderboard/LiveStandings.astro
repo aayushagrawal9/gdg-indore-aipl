@@ -45,11 +45,11 @@ import { aiplEvents } from '@config/leaderboard/events';
           const rank = idx + 1;
           const accentBg =
             rank === 1
-              ? 'bg-yellow-100 text-yellow-700 border border-yellow-300'
+              ? 'bg-yellow-100 text-yellow-700 border border-yellow-300 dark:bg-yellow-500/20 dark:text-yellow-400 dark:border-yellow-500/30'
               : rank === 2
-              ? 'bg-slate-100 text-slate-500 border border-slate-300'
+              ? 'bg-slate-100 text-slate-500 border border-slate-300 dark:bg-slate-500/20 dark:text-slate-300 dark:border-slate-500/30'
               : rank === 3
-              ? 'bg-amber-100 text-amber-700 border border-amber-300'
+              ? 'bg-amber-100 text-amber-700 border border-amber-300 dark:bg-amber-500/20 dark:text-amber-400 dark:border-amber-500/30'
               : 'bg-primary/10 text-primary';
 
           const rowGlow =
