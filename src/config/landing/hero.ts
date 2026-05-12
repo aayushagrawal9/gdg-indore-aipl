@@ -4,7 +4,7 @@ export const hero = {
   subTitle: 'Agentic Premier League (APL)',
   tagline: 'Watch the Match. Flow with the Code.',
   taglineTwo: 'Win in the Death Overs.',
-  primaryCta: { label: 'Join the Next Watch Party', href: '#' },
+  primaryCta: { label: 'Join the Next Watch Party', href: 'https://aipl.gdgindore.in/register/' },
   secondaryCta: { label: 'View Leaderboard', href: '/leaderboard' },
   image: {
     src: '/images/hero-image.jpg',

@@ -13,6 +13,34 @@ export const schedule = {
   heading: 'Upcoming Innings',
   matches: [
     {
+      teams: 'Qualifier 1',
+      date: '26th May 2026',
+      status: 'upcoming',
+      ctaLabel: 'Register',
+      ctaHref: 'https://aipl.gdgindore.in/register/'
+    },
+    {
+      teams: 'KKR vs MI',
+      date: '20th May 2026',
+      status: 'upcoming',
+      ctaLabel: 'Register',
+      ctaHref: 'https://aipl.gdgindore.in/register/'
+    },
+    {
+      teams: 'LSG vs CSK',
+      date: '15th May 2026',
+      status: 'upcoming',
+      ctaLabel: 'Register',
+      ctaHref: 'https://aipl.gdgindore.in/register/'
+    },
+    {
+      teams: 'RCB vs KKR',
+      date: '13th May 2026',
+      status: 'upcoming',
+      ctaLabel: 'Register',
+      ctaHref: 'https://aipl.gdgindore.in/register/'
+    },
+    {
       teams: 'LSG vs RCB',
       date: '7th May 2026',
       status: 'completed',
