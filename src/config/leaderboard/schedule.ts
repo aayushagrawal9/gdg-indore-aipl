@@ -59,8 +59,8 @@ export const fullSchedule = {
       teamB: { initials: 'KKR', name: 'Kolkata Knight Riders' },
       time: '18:00 GMT+5:30',
       location: "Murphy's Cafe & Fine Dine, Indore",
-      cta: { label: 'Register', variant: 'solid', href: 'https://aipl.gdgindore.in/register/' },
-      tab: 'upcoming',
+      cta: { label: 'View Results', variant: 'solid', href: '#liveStandings' },
+      tab: 'completed',
       highlighted: true,
     },
     {

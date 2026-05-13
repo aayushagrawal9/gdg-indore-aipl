@@ -130,6 +130,30 @@ export const aiplEvents: AIPLEvent[] = [
       { name: 'Team Innotech',       project: 'Cricket legend AI simulation', repoLink: '',                                                    points: 8 },
     ],
   },
+  {
+    id: 'may13',
+    label: 'May 13, 2026',
+    iplMatch: 'RCB vs KKR',
+    date: '2026-05-13',
+    entries: [
+      { name: 'Pragyan',             project: 'CricFUN',                   repoLink: 'https://github.com/CodeWithBishal/apl-2',               points: 21 },
+      { name: 'Devesh Talreja',      project: 'Super Over Saga (IPL Edition)', repoLink: 'https://github.com/devesh-talreja/super-over-saga',     points: 21 },
+      { name: 'Pushpraj Singhal',    project: 'Cric warp api',             repoLink: 'https://github.com/pushprajsinghal/cric-wrap-ai',       points: 20 },
+      { name: 'Quick circketer',     project: 'Quick Cricket',             repoLink: 'https://github.com/infinite-ctg/studio',                points: 14 },
+      { name: 'Neural Nexus',        project: '',                          repoLink: '',                                                       points: 13 },
+      { name: 'Rizwan Sheikh',       project: '',                          repoLink: '',                                                       points: 13 },
+      { name: 'Predictive pair',     project: 'AI Cricket Quiz Battle',    repoLink: 'https://github.com/Mahilalwani/gdg-cricketquiz',        points: 11 },
+      { name: 'Cyber-squad',         project: 'Cricket Arcade',            repoLink: 'https://github.com/Aniket1603/Vibe-Coding-Cricket-Arcade', points: 11 },
+      { name: 'Derivative',          project: '',                          repoLink: '',                                                       points: 10 },
+      { name: 'Titans',              project: 'Vibe Cricket Arcade',       repoLink: 'https://github.com/chouhan-akshat/Cricket-Project.git', points: 9 },
+      { name: 'Yashraj singh',       project: '',                          repoLink: 'https://github.com/yashpeterhub/Cricket.git',           points: 9 },
+      { name: 'Monster',             project: '',                          repoLink: '',                                                       points: 9 },
+      { name: 'Auronitic',           project: 'Cricket quiz',              repoLink: 'https://github.com/ompandey84/GDG',                     points: 9 },
+      { name: 'Rishabh Choudhary',   project: '',                          repoLink: '',                                                       points: 8 },
+      { name: 'Imaginary Thinkers',  project: 'ai game',                   repoLink: '',                                                       points: 7 },
+      { name: 'Gdg warriors',        project: '',                          repoLink: '',                                                       points: 7 },
+    ],
+  },
 ];
 
 // ── UTILITY: Compute cumulative standings across all events ─
