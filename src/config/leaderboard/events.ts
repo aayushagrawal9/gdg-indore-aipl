@@ -154,6 +154,30 @@ export const aiplEvents: AIPLEvent[] = [
       { name: 'Gdg warriors',        project: '',                          repoLink: '',                                                       points: 7 },
     ],
   },
+  {
+    id: 'may15',
+    label: 'May 15, 2026',
+    iplMatch: 'LSG vs CSK',
+    date: '2026-05-15',
+    entries: [
+      { name: 'ByteFrame',           project: 'IPL',                       repoLink: 'https://github.com/arpanrai17/IPl',                     points: 25 },
+      { name: 'Imaginary Thinkers',  project: 'VantagePoint AI',           repoLink: 'https://github.com/infinite-ctg/AI-drs',                points: 22 },
+      { name: 'Driven(yashraj)',     project: 'Driven',                    repoLink: 'https://github.com/yashpeterhub/Driven.git',            points: 19 },
+      { name: 'Prime helix',         project: "Jay Shah's Personal diary", repoLink: 'https://github.com/jainaarav108/JayShah-sDiarylmao',    points: 19 },
+      { name: 'Ayush Shinde',        project: "Jay Shah's Personal Diary", repoLink: 'http://github.com/theayushshinde/jay-shah-s-diary',     points: 17 },
+      { name: 'Criccode',            project: "The Scriptwriter's Revenge",repoLink: 'https://github.com/neeraj5050/cric_code',               points: 17 },
+      { name: 'Aagam Jain',          project: 'ps 2',                      repoLink: 'https://github.com/aagamjain-art/Apl-15.git',           points: 16 },
+      { name: 'UP187',               project: 'Cricflix',                  repoLink: 'https://github.com/Mango-Piety/cricflix',               points: 16 },
+      { name: 'Arshan',              project: 'AI-DRS Cricket Decision...',repoLink: 'https://github.com/saiman-lab/ai-drs',                  points: 15 },
+      { name: 'Gemini Giants',       project: 'ThirdEye DRS',              repoLink: 'https://github.com/Mahilalwani/gdg-geminigiants',       points: 15 },
+      { name: 'AI strikers',         project: "The Scriptwriter's Revenge",repoLink: 'https://github.com/sudarshanr04/Scriptriter-AI.git',    points: 12 },
+      { name: 'Team Leo',            project: '',                          repoLink: '',                                                       points: 11 },
+      { name: 'Munish Jain',         project: 'Brothers Regedit DRS AI',   repoLink: 'https://github.com/munishhhh/Project',                  points: 10 },
+      { name: 'Pushpraj Singhal',    project: 'AI DRS',                    repoLink: 'https://github.com/pushprajsinghal/AI-DRS',             points: 9  },
+      { name: 'Dynamic Duo',         project: 'Third eye',                 repoLink: 'https://github.com/DakshMandwal/Third_eye',             points: 8  },
+      { name: 'Pithhampur',          project: 'stump sense',               repoLink: 'https://github.com/piyushsoni24-oss/studio',            points: 8  },
+    ],
+  },
 ];
 
 // ── UTILITY: Compute cumulative standings across all events ─

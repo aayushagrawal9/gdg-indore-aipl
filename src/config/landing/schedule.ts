@@ -29,9 +29,9 @@ export const schedule = {
     {
       teams: 'LSG vs CSK',
       date: '15th May 2026',
-      status: 'upcoming',
-      ctaLabel: 'Register',
-      ctaHref: 'https://aipl.gdgindore.in/register/'
+      status: 'completed',
+      ctaLabel: 'View Results',
+      ctaHref: '/leaderboard'
     },
     {
       teams: 'RCB vs KKR',
