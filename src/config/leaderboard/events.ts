@@ -178,6 +178,25 @@ export const aiplEvents: AIPLEvent[] = [
       { name: 'Pithhampur',          project: 'stump sense',               repoLink: 'https://github.com/piyushsoni24-oss/studio',            points: 8  },
     ],
   },
+  {
+    id: 'may20',
+    label: 'May 20, 2026',
+    iplMatch: 'KKR vs MI',
+    date: '2026-05-20',
+    entries: [
+      { name: 'AI strikers',         project: 'Dream Team',                repoLink: 'https://github.com/sudarshanr04/DREAM.TEAM.git',        points: 15 },
+      { name: 'Ice water',           project: 'Strom falcons',             repoLink: 'https://github.com/rishabh25-maker/ICE-WATER',          points: 14 },
+      { name: 'Cyber-squad',         project: 'CricektVerse Ai agent',     repoLink: 'https://github.com/Aniket1603/Cricketverse',             points: 13 },
+      { name: 'Criccode',            project: 'AI Agent Workflow Board',   repoLink: 'https://github.com/neeraj5050/APL-20',                  points: 12 },
+      { name: 'Tista',               project: 'BATTLEX AI COGNITIVE',      repoLink: 'https://github.com/luckychoudhary08292/BATTLEX-AI',      points: 12 },
+      { name: 'Imaginary Thinkers',  project: 'ipl forge',                 repoLink: 'https://github.com/krunalfdhgiu/studio',                points: 11 },
+      { name: 'Prajwal Singh',       project: 'Dugout',                    repoLink: 'https://github.com/Mango-Piety/dugout',                 points: 11 },
+      { name: 'Initial commit',      project: 'Indore Infernos',           repoLink: 'https://github.com/YashBarfa0603/indore_infernos',       points: 8 },
+      { name: 'Kunesh',              project: 'ipl_own_team',              repoLink: 'https://github.com/kuneshbhanpurkar/ipl_',              points: 6 },
+      { name: 'Future khatre me',    project: 'Indore Invincibles Comm',   repoLink: 'https://github.com/AvneetSingh11/ipl-simulator',        points: 5 },
+      { name: 'Yash Raj Surana',     project: 'Commentoo',                 repoLink: 'https://github.com/Yash-RajSurana/APL2',                points: 5 },
+    ],
+  },
 ];
 
 // ── UTILITY: Compute cumulative standings across all events ─

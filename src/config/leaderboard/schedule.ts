@@ -37,8 +37,8 @@ export const fullSchedule = {
       teamB: { initials: 'MI', name: 'Mumbai Indians' },
       time: '18:00 GMT+5:30',
       location: 'Hopin - Patio Cafe, Indore',
-      cta: { label: 'Register', variant: 'solid', href: 'https://aipl.gdgindore.in/register/' },
-      tab: 'upcoming',
+      cta: { label: 'View Results', variant: 'solid', href: '#liveStandings' },
+      tab: 'completed',
       highlighted: true,
     },
     {

@@ -22,9 +22,9 @@ export const schedule = {
     {
       teams: 'KKR vs MI',
       date: '20th May 2026',
-      status: 'upcoming',
-      ctaLabel: 'Register',
-      ctaHref: 'https://aipl.gdgindore.in/register/'
+      status: 'completed',
+      ctaLabel: 'View Results',
+      ctaHref: '/leaderboard'
     },
     {
       teams: 'LSG vs CSK',
