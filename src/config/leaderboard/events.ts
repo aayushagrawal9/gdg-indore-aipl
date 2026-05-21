@@ -185,8 +185,8 @@ export const aiplEvents: AIPLEvent[] = [
     date: '2026-05-20',
     entries: [
       { name: 'AI strikers',         project: 'Dream Team',                repoLink: 'https://github.com/sudarshanr04/DREAM.TEAM.git',        points: 15 },
+      { name: 'Cyber-squad',         project: 'CricektVerse Ai agent',     repoLink: 'https://github.com/Aniket1603/Cricketverse',             points: 14 },
       { name: 'Ice water',           project: 'Strom falcons',             repoLink: 'https://github.com/rishabh25-maker/ICE-WATER',          points: 14 },
-      { name: 'Cyber-squad',         project: 'CricektVerse Ai agent',     repoLink: 'https://github.com/Aniket1603/Cricketverse',             points: 13 },
       { name: 'Criccode',            project: 'AI Agent Workflow Board',   repoLink: 'https://github.com/neeraj5050/APL-20',                  points: 12 },
       { name: 'Tista',               project: 'BATTLEX AI COGNITIVE',      repoLink: 'https://github.com/luckychoudhary08292/BATTLEX-AI',      points: 12 },
       { name: 'Imaginary Thinkers',  project: 'ipl forge',                 repoLink: 'https://github.com/krunalfdhgiu/studio',                points: 11 },
