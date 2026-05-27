@@ -197,6 +197,29 @@ export const aiplEvents: AIPLEvent[] = [
       { name: 'Yash Raj Surana',     project: 'Commentoo',                 repoLink: 'https://github.com/Yash-RajSurana/APL2',                points: 5 },
     ],
   },
+  {
+    id: 'may26',
+    label: 'May 26, 2026',
+    iplMatch: 'Qualifier 1',
+    date: '2026-05-26',
+    entries: [
+      { name: 'Auronetic',           project: 'Watch party + Akinator',    repoLink: 'https://github.com/arpanrai17/IPL-GDG',                 points: 22 },
+      { name: 'Prime helix',         project: 'SidhuPredicts',             repoLink: 'https://github.com/jainaarav108/gdgsiddhu',             points: 19 },
+      { name: 'Ayush Shinde',        project: 'Cric-Akinator',             repoLink: 'https://github.com/theayushshinde/aki-ipl',             points: 17 },
+      { name: 'Cyber-squad',         project: 'AkiCircket',                repoLink: 'https://github.com/gautam1432002/Akicricket',            points: 16 },
+      { name: 'Mystery Over',        project: 'AKI CRICKET',               repoLink: 'https://github.com/neeraj5050/apl-26',                  points: 16 },
+      { name: 'Pushpraj Singhal',    project: 'Ai akinator',               repoLink: 'https://github.com/pushprajsinghal/AI-IPL-Akinator-/upload', points: 16 },
+      { name: 'Byte Frame',          project: 'Ipl',                       repoLink: 'https://github.com/Amishasolanki/open.git',             points: 14 },
+      { name: 'Imaginary Thinkers',  project: 'IPL AI HOST',               repoLink: 'https://github.com/krunalfdhgiu/UG.git',                points: 13 },
+      { name: 'Ansh kumar jain',     project: 'AKI-CRICKET',               repoLink: 'https://github.com/thekind99999-web/Aki-criket',        points: 12 },
+      { name: 'Tech titans',         project: 'Aki - cricket',             repoLink: 'https://github.com/aniket-awasthi-2006/Aki-Cricket-by-Aniket-and-Ansh-', points: 12 },
+      { name: 'Charmander',          project: 'AKINATOR ARENA',            repoLink: 'https://github.com/rishabh25-maker/charmander.git',     points: 11 },
+      { name: 'Shashank Namdev',     project: 'AI-Powered IPL Watch Party & Crowd...', repoLink: 'https://github.com/shashank750/ipl-predictor-arena', points: 11 },
+      { name: 'Saurabh',             project: 'aki-cricket-live',          repoLink: 'https://github.com/saurabhkhichi/AI-Akinator',          points: 10 },
+      { name: 'Aditya patidar',      project: 'Aki-Cricket 2.0',           repoLink: 'https://github.com/aadityapatidar14/Aki-cricket',       points: 7 },
+      { name: 'Chinmay',             project: 'Aki-cricket',               repoLink: 'https://github.com/infinite-ctg/aki-cricket',           points: 7 },
+    ],
+  },
 ];
 
 // ── UTILITY: Compute cumulative standings across all events ─

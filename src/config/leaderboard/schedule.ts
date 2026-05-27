@@ -26,8 +26,8 @@ export const fullSchedule = {
       teamB: { initials: 'TBD', name: 'Team 2' },
       time: '18:00 GMT+5:30',
       location: "Murphy's Cafe & Fine Dine, Indore",
-      cta: { label: 'Register', variant: 'solid', href: 'https://aipl.gdgindore.in/register/' },
-      tab: 'upcoming',
+      cta: { label: 'View Results', variant: 'solid', href: '#liveStandings' },
+      tab: 'completed',
       highlighted: true,
     },
     {
